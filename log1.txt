@@ -1,0 +1,468 @@
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(string varf; (varf=C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; (openfile(varf); (int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf))))))))) | 
+
+Symbol table
+{}
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+string varf | (varf=C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; (openfile(varf); (int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf)))))))) | 
+
+Symbol table
+{}
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(varf=C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; (openfile(varf); (int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf)))))))) | 
+
+Symbol table
+{varf->; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+varf=C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in | (openfile(varf); (int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf))))))) | 
+
+Symbol table
+{varf->; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(openfile(varf); (int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf))))))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+openfile(varf) | (int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf)))))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+(int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf)))))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+int varc | (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf))))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+(readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf))))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->0; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+readfile(varc,varf) | (print(varc); (readfile(varc,varf); (print(varc); closefile(varf)))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->0; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+(print(varc); (readfile(varc,varf); (print(varc); closefile(varf)))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->15; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+print(varc) | (readfile(varc,varf); (print(varc); closefile(varf))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->15; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+(readfile(varc,varf); (print(varc); closefile(varf))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->15; }
+
+Output
+[15,]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+readfile(varc,varf) | (print(varc); closefile(varf)) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->15; }
+
+Output
+[15,]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+(print(varc); closefile(varf)) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->50; }
+
+Output
+[15,]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+print(varc) | closefile(varf) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->50; }
+
+Output
+[15,]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+closefile(varf) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->50; }
+
+Output
+[15,50,]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(string varf; (varf=C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; (openfile(varf); (int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf))))))))) | 
+
+Symbol table
+{}
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+string varf | (varf=C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; (openfile(varf); (int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf)))))))) | 
+
+Symbol table
+{}
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(varf=C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; (openfile(varf); (int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf)))))))) | 
+
+Symbol table
+{varf->; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+varf=C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in | (openfile(varf); (int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf))))))) | 
+
+Symbol table
+{varf->; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(openfile(varf); (int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf))))))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+openfile(varf) | (int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf)))))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+(int varc; (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf)))))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+int varc | (readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf))))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+(readfile(varc,varf); (print(varc); (readfile(varc,varf); (print(varc); closefile(varf))))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->0; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+readfile(varc,varf) | (print(varc); (readfile(varc,varf); (print(varc); closefile(varf)))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->0; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+(print(varc); (readfile(varc,varf); (print(varc); closefile(varf)))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->15; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+print(varc) | (readfile(varc,varf); (print(varc); closefile(varf))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->15; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+(readfile(varc,varf); (print(varc); closefile(varf))) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->15; }
+
+Output
+[15,]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+readfile(varc,varf) | (print(varc); closefile(varf)) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->15; }
+
+Output
+[15,]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+(print(varc); closefile(varf)) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->50; }
+
+Output
+[15,]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+print(varc) | closefile(varf) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->50; }
+
+Output
+[15,]
+
+================== Next step ==================
+FileTable
+[C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in]
+
+ExeStack
+closefile(varf) | 
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->50; }
+
+Output
+[15,50,]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->50; }
+
+Output
+[15,50,]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+
+
+Symbol table
+{varf->C:\Storage\Facultate\Semester 3\Advanced programming methods\Labs\Assignments\Assignment - Interpretor\tests\test.in; varc->50; }
+
+Output
+[15,50,]
+

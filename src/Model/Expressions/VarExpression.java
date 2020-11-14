@@ -1,0 +1,28 @@
+package Model.Expressions;
+
+import Model.ADTs.IDictionary;
+import Model.Exceptions.MyException;
+import Model.Values.IValue;
+
+public class VarExpression implements IExpression {
+    String id;
+
+    public VarExpression(String id) {
+        this.id = id;
+    }
+
+    @Override
+    public IValue evaluate(IDictionary<String, IValue> symbolTable) throws MyException {
+        return symbolTable.lookup(this.id);
+    }
+
+    public String toString() {
+        return this.id;
+    }
+
+    @Override
+    public IExpression deepCopy() {
+        return new VarExpression(this.id);
+    }
+
+}

@@ -1,0 +1,195 @@
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(string varf; (varf=test.txt; (openfile(varf); (int a; (readfile(varf,a); ((if (10>a) then (print(a less than 10)) else (print(a greater than 10))); closefile(varf))))))) | 
+
+Symbol table
+{}
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+string varf | (varf=test.txt; (openfile(varf); (int a; (readfile(varf,a); ((if (10>a) then (print(a less than 10)) else (print(a greater than 10))); closefile(varf)))))) | 
+
+Symbol table
+{}
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(varf=test.txt; (openfile(varf); (int a; (readfile(varf,a); ((if (10>a) then (print(a less than 10)) else (print(a greater than 10))); closefile(varf)))))) | 
+
+Symbol table
+{varf->; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+varf=test.txt | (openfile(varf); (int a; (readfile(varf,a); ((if (10>a) then (print(a less than 10)) else (print(a greater than 10))); closefile(varf))))) | 
+
+Symbol table
+{varf->; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(openfile(varf); (int a; (readfile(varf,a); ((if (10>a) then (print(a less than 10)) else (print(a greater than 10))); closefile(varf))))) | 
+
+Symbol table
+{varf->test.txt; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+openfile(varf) | (int a; (readfile(varf,a); ((if (10>a) then (print(a less than 10)) else (print(a greater than 10))); closefile(varf)))) | 
+
+Symbol table
+{varf->test.txt; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[test.txt]
+
+ExeStack
+(int a; (readfile(varf,a); ((if (10>a) then (print(a less than 10)) else (print(a greater than 10))); closefile(varf)))) | 
+
+Symbol table
+{varf->test.txt; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[test.txt]
+
+ExeStack
+int a | (readfile(varf,a); ((if (10>a) then (print(a less than 10)) else (print(a greater than 10))); closefile(varf))) | 
+
+Symbol table
+{varf->test.txt; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[test.txt]
+
+ExeStack
+(readfile(varf,a); ((if (10>a) then (print(a less than 10)) else (print(a greater than 10))); closefile(varf))) | 
+
+Symbol table
+{a->0; varf->test.txt; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[test.txt]
+
+ExeStack
+readfile(varf,a) | ((if (10>a) then (print(a less than 10)) else (print(a greater than 10))); closefile(varf)) | 
+
+Symbol table
+{a->0; varf->test.txt; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[test.txt]
+
+ExeStack
+((if (10>a) then (print(a less than 10)) else (print(a greater than 10))); closefile(varf)) | 
+
+Symbol table
+{a->15; varf->test.txt; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[test.txt]
+
+ExeStack
+(if (10>a) then (print(a less than 10)) else (print(a greater than 10))) | closefile(varf) | 
+
+Symbol table
+{a->15; varf->test.txt; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[test.txt]
+
+ExeStack
+print(a greater than 10) | closefile(varf) | 
+
+Symbol table
+{a->15; varf->test.txt; }
+
+Output
+[]
+
+================== Next step ==================
+FileTable
+[test.txt]
+
+ExeStack
+closefile(varf) | 
+
+Symbol table
+{a->15; varf->test.txt; }
+
+Output
+[a greater than 10,]
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+
+
+Symbol table
+{a->15; varf->test.txt; }
+
+Output
+[a greater than 10,]
+

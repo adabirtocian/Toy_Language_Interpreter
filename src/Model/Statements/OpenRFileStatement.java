@@ -1,7 +1,6 @@
 package Model.Statements;
 
 import Model.ADTs.IDictionary;
-import Model.ADTs.IStack;
 import Model.Exceptions.MyException;
 import Model.Exceptions.OpenFileException;
 import Model.Exceptions.StatementException;

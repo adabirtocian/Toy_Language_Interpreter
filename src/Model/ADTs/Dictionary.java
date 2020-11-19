@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
 
-    private final HashMap<T1,T2> dictionary;
+    protected final HashMap<T1,T2> dictionary;
 
     public Dictionary() {
         this.dictionary = new HashMap<>();
@@ -14,7 +14,7 @@ public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
     @Override
     public void add(T1 key, T2 value) throws MyException {
         if(this.dictionary.containsKey(key)) {
-            throw new ADTException("Dictionary: Duplicate key");
+            throw new ADTException("Duplicate key");
         }
         this.dictionary.put(key, value);
     }
@@ -22,7 +22,7 @@ public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
     @Override
     public void update(T1 key, T2 newValue) throws MyException {
         if(! this.dictionary.containsKey(key)) {
-            throw new ADTException("Dictionary: Inexistent key");
+            throw new ADTException("Inexistent key");
         }
         this.dictionary.replace(key, newValue);
     }
@@ -30,7 +30,7 @@ public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
     @Override
     public void remove(T1 key) throws MyException {
         if(! this.dictionary.containsKey(key)) {
-            throw new ADTException("Dictionary: Inexistent key");
+            throw new ADTException("Inexistent key");
         }
         this.dictionary.remove(key);
     }
@@ -38,7 +38,7 @@ public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
     @Override
     public T2 lookup(T1 key) throws MyException {
         if(! this.dictionary.containsKey(key)) {
-            throw new ADTException("Dictionary: Inexistent key");
+            throw new ADTException("Inexistent key");
         }
         return this.dictionary.get(key);
     }
@@ -50,14 +50,6 @@ public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
 
 
     public String toString() {
-        StringBuilder stringResult = new StringBuilder();
-        for(T1 key: this.dictionary.keySet()) {
-            stringResult.append(key);
-            stringResult.append("->");
-            stringResult.append(this.dictionary.get(key).toString());
-            stringResult.append("; ");
-        }
-
-        return stringResult.toString();
+        return this.dictionary.toString();
     }
 }

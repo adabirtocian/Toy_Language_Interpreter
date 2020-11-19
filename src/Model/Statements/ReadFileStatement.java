@@ -34,7 +34,7 @@ public class ReadFileStatement implements IStatement{
                 throw new ReadFileException("ReadFile: Variable type is not int");
         } else throw new ReadFileException("ReadFile: Variable not defined");
 
-        IValue expressionValue = this.expression.evaluate(symbolTable);
+        IValue expressionValue = this.expression.evaluate(symbolTable, state.getHeapTable());
         if(! expressionValue.getType().equals(new StringType()))
             throw new ReadFileException("ReadFile: Expression value not string");
 

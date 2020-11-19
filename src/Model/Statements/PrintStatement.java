@@ -16,7 +16,7 @@ public class PrintStatement implements IStatement {
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
         IList<IValue> out = state.getOut();
-        IValue valueExpression = this.expression.evaluate(state.getSymbolTabel());
+        IValue valueExpression = this.expression.evaluate(state.getSymbolTabel(), state.getHeapTable());
         out.add(valueExpression);
 
         return state;

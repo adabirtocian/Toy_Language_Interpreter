@@ -47,7 +47,7 @@ public class IfStatement implements IStatement{
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        IValue valueExpression = this.expression.evaluate(state.getSymbolTabel());
+        IValue valueExpression = this.expression.evaluate(state.getSymbolTabel(), state.getHeapTable());
         IType type = valueExpression.getType();
         if(!type.equals(new BoolType())) {
             throw new StatementException("Conditional expression is not a boolean");

@@ -25,12 +25,7 @@ public class List<T> implements IList<T> {
     }
 
     public String toString() {
-        StringBuilder stringResult = new StringBuilder();
-        for(T element: this.list) {
-            stringResult.append(element);
-            stringResult.append(",");
-        }
-        return stringResult.toString();
+        return this.list.toString();
     }
 
     @Override

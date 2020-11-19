@@ -27,7 +27,7 @@ public class CloseRFileStatement implements IStatement {
         IStack<IStatement> exeStack = state.getExeStack();
         IDictionary<StringValue, BufferedReader> fileTable = state.getFileTable();
 
-        IValue expressionValue = this.expression.evaluate(state.getSymbolTabel());
+        IValue expressionValue = this.expression.evaluate(state.getSymbolTabel(), state.getHeapTable());
         if(! expressionValue.getType().equals(new StringType()))
             throw new CloseFileException("CloseFile: Expression value not string");
 

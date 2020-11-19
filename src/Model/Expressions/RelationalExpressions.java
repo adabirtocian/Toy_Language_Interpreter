@@ -1,6 +1,7 @@
 package Model.Expressions;
 
 import Model.ADTs.IDictionary;
+import Model.ADTs.IHeapTable;
 import Model.Exceptions.EvaluationException;
 import Model.Exceptions.MyException;
 import Model.Types.IntType;
@@ -21,10 +22,10 @@ public class RelationalExpressions implements IExpression{
     }
 
     @Override
-    public IValue evaluate(IDictionary<String, IValue> symbolTable) throws MyException {
-        IValue iValue1 = this.expression1.evaluate(symbolTable);
+    public IValue evaluate(IDictionary<String, IValue> symbolTable, IHeapTable<Integer, IValue> heapTable) throws MyException {
+        IValue iValue1 = this.expression1.evaluate(symbolTable, heapTable);
         if(iValue1.getType().equals(new IntType())) {
-            IValue iValue2 = this.expression2.evaluate(symbolTable);
+            IValue iValue2 = this.expression2.evaluate(symbolTable, heapTable);
             if(iValue2.getType().equals(new IntType())) {
                 IntValue intValue1 = (IntValue) iValue1;
                 IntValue intValue2 = (IntValue) iValue2;

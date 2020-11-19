@@ -9,7 +9,7 @@ public class MyStack<T> implements IStack<T> {
     private final Stack<T> myStack;
 
     public MyStack() {
-        this.myStack = new Stack<T>();
+        this.myStack = new Stack<>();
     }
 
     @Override
@@ -35,7 +35,7 @@ public class MyStack<T> implements IStack<T> {
         Object[] values = this.myStack.toArray();
         for(int i= values.length - 1; i >= 0; --i) {
             stringBuilder.append(values[i]);
-            stringBuilder.append(" | ");
+            stringBuilder.append(" || ");
         }
         return stringBuilder.toString();
     }

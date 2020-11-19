@@ -1,7 +1,6 @@
 package Controller;
 
 import Model.ADTs.IStack;
-import Model.Exceptions.ADTException;
 import Model.Exceptions.MyException;
 import Model.Exceptions.StatementException;
 import Model.ProgramState;

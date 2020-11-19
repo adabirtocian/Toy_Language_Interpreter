@@ -40,7 +40,7 @@ public class AssignStatement implements IStatement {
         IDictionary<String, IValue> symbolTable = state.getSymbolTabel();
 
         if(symbolTable.isDefined(this.id)) {
-            IValue value = this.expression.evaluate(symbolTable);
+            IValue value = this.expression.evaluate(symbolTable, state.getHeapTable());
             IType typeId = (IType) (symbolTable.lookup(this.id)).getType();
             if(value.getType().equals(typeId)) {
                 symbolTable.update(this.id, value);

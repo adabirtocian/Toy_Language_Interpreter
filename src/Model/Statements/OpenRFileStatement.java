@@ -24,7 +24,7 @@ public class OpenRFileStatement  implements IStatement{
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
         IDictionary<StringValue, BufferedReader> fileTable = state.getFileTable();
-        IValue expressionValue = this.expression.evaluate(state.getSymbolTabel());
+        IValue expressionValue = this.expression.evaluate(state.getSymbolTabel(), state.getHeapTable());
 
         if( ! expressionValue.getType().equals(new StringType()))
             throw new StatementException("OpenFile: Expression not a string");

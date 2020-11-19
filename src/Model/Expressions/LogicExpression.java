@@ -2,7 +2,8 @@ package Model.Expressions;
 
 import Model.ADTs.IDictionary;
 import Model.ADTs.IHeapTable;
-import Model.Exceptions.EvaluationException;
+import Model.Exceptions.InvalidOperatorException;
+import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
 import Model.Types.BoolType;
 import Model.Values.BoolValue;
@@ -63,11 +64,11 @@ public class LogicExpression implements IExpression {
                 else if(this.operator.equalsIgnoreCase("or")) {
                     return new BoolValue(realBoolValue1 || realBoolValue2);
                 }
-                else throw new EvaluationException("Invalid logic operator");
+                else throw new InvalidOperatorException("Logic expression: Invalid logic operator");
             }
-            else throw new EvaluationException("Operand 2 is not a boolean");
+            else throw new InvalidTypeException("Logic expression: Operand 2 is not a boolean");
         }
-        else throw new EvaluationException("Operand 1 is not a boolean");
+        else throw new InvalidTypeException("Logic expression: Operand 1 is not a boolean");
     }
 
     @Override
@@ -77,9 +78,7 @@ public class LogicExpression implements IExpression {
 
     @Override
     public IExpression deepCopy() {
-        IExpression expression1 = this.expression1.deepCopy();
-        IExpression expression2 = this.expression2.deepCopy();
-        return new LogicExpression(expression1, expression2, this.operator);
+        return new LogicExpression(this.expression1.deepCopy(), this.expression2.deepCopy(), this.operator);
     }
 
 }

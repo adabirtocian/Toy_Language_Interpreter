@@ -1,7 +1,8 @@
 package Model.Statements;
 
+import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
-import Model.Exceptions.StatementException;
+import Model.Exceptions.UndeclaredVariableException;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
 import Model.Types.ReferenceType;
@@ -21,16 +22,16 @@ public class HeapAllocationStatement implements IStatement{
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
         if(! state.getSymbolTabel().isDefined(this.variableName))
-            throw new StatementException("Heap allocation: variable " +  this.variableName +" not declared");
+            throw new UndeclaredVariableException("Heap allocation: variable " +  this.variableName +" not declared");
 
         IValue refValue = state.getSymbolTabel().lookup(this.variableName);
         if(! (refValue.getType() instanceof ReferenceType))
-            throw new StatementException("Heap allocation: variable " + this.variableName + " is not a reference type");
+            throw new InvalidTypeException("Heap allocation: variable " + this.variableName + " not a reference type");
 
         IValue expressionResult = this.expression.evaluate(state.getSymbolTabel(), state.getHeapTable());
 
         if(! expressionResult.getType().equals(((ReferenceValue)refValue).getLocationType()))
-            throw new StatementException("Heap allocation: reference location type and expression type do not match");
+            throw new InvalidTypeException("Heap allocation: reference location type and expression type do not match");
 
         int address = state.getHeapTable().getNewFreeLocation();
         state.getHeapTable().add(address, expressionResult);

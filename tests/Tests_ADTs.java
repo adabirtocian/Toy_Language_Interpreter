@@ -2,7 +2,7 @@ import Model.ADTs.Dictionary;
 import Model.ADTs.IDictionary;
 import Model.ADTs.IList;
 import Model.ADTs.List;
-import Model.Exceptions.ADTException;
+import Model.Exceptions.EmptyStackException;
 import Model.Exceptions.MyException;
 import Model.Values.BoolValue;
 import Model.Values.IValue;
@@ -19,7 +19,7 @@ public class Tests_ADTs {
         symbolTable.add("v", value);
 
         assertEquals(4, ((IntValue)symbolTable.lookup("v")).getValue());
-        MyException exception  = assertThrows(ADTException.class, () -> symbolTable.add("v", value1));
+        MyException exception  = assertThrows(EmptyStackException.class, () -> symbolTable.add("v", value1));
         assertEquals("Duplicate key", exception.getMessage());
     }
 

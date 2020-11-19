@@ -1,5 +1,5 @@
 package Model.ADTs;
-import Model.Exceptions.ADTException;
+import Model.Exceptions.EmptyStackException;
 import Model.Exceptions.MyException;
 
 import java.util.Stack;
@@ -20,7 +20,7 @@ public class MyStack<T> implements IStack<T> {
     @Override
     public T pop() throws MyException {
         if(this.myStack.isEmpty()) {
-            throw new ADTException("Stack: Empty stack");
+            throw new EmptyStackException("Empty stack");
         }
         return this.myStack.pop();
     }

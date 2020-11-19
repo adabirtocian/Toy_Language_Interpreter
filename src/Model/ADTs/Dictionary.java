@@ -1,5 +1,5 @@
 package Model.ADTs;
-import Model.Exceptions.ADTException;
+import Model.Exceptions.InvalidKeyException;
 import Model.Exceptions.MyException;
 import java.util.HashMap;
 
@@ -14,7 +14,7 @@ public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
     @Override
     public void add(T1 key, T2 value) throws MyException {
         if(this.dictionary.containsKey(key)) {
-            throw new ADTException("Duplicate key");
+            throw new InvalidKeyException("Duplicate key");
         }
         this.dictionary.put(key, value);
     }
@@ -22,7 +22,7 @@ public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
     @Override
     public void update(T1 key, T2 newValue) throws MyException {
         if(! this.dictionary.containsKey(key)) {
-            throw new ADTException("Inexistent key");
+            throw new InvalidKeyException("Inexistent key");
         }
         this.dictionary.replace(key, newValue);
     }
@@ -30,7 +30,7 @@ public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
     @Override
     public void remove(T1 key) throws MyException {
         if(! this.dictionary.containsKey(key)) {
-            throw new ADTException("Inexistent key");
+            throw new InvalidKeyException("Inexistent key");
         }
         this.dictionary.remove(key);
     }
@@ -38,7 +38,7 @@ public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
     @Override
     public T2 lookup(T1 key) throws MyException {
         if(! this.dictionary.containsKey(key)) {
-            throw new ADTException("Inexistent key");
+            throw new InvalidKeyException("Inexistent key");
         }
         return this.dictionary.get(key);
     }

@@ -1,5 +1,6 @@
 package Model.ADTs;
-import Model.Exceptions.ADTException;
+
+import Model.Exceptions.InvalidKeyException;
 import Model.Exceptions.MyException;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class List<T> implements IList<T> {
     @Override
     public T pop() throws MyException {
         if(this.list.isEmpty())
-            throw new ADTException("List: Empty list");
+            throw new InvalidKeyException("Empty list");
         return this.list.get(0);
     }
 

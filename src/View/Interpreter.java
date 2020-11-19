@@ -73,7 +73,7 @@ public class Interpreter {
                                                                     new ReadFileStatement(new VarExpression("varf"), "a"),
                                                                     new CompStatement(
                                                                             new IfStatement(
-                                                                                    new RelationalExpressions(
+                                                                                    new RelationalExpression(
                                                                                             new VarExpression("a"),
                                                                                             new VarExpression("varc"),
                                                                                             ">"),
@@ -105,7 +105,7 @@ public class Interpreter {
                                                 new ReadFileStatement(new VarExpression("varf"), "a"),
                                                 new CompStatement(
                                                         new IfStatement(
-                                                                new RelationalExpressions(
+                                                                new RelationalExpression(
                                                                         new ValueExpression(new IntValue(10)),
                                                                         new VarExpression("a"),
                                                                         ">"),
@@ -165,10 +165,10 @@ public class Interpreter {
 
 
         // Ref int v;new(v,20);print(rH(v)); wH(v,30);print(rH(v)+5);
-        IStack<IStatement> exeStack5 = new MyStack<IStatement>();
-        IDictionary<String, IValue> symbolTable5 = new Dictionary<String, IValue>();
+        IStack<IStatement> exeStack5 = new MyStack<>();
+        IDictionary<String, IValue> symbolTable5 = new Dictionary<>();
         IDictionary<StringValue, BufferedReader> fileTable5 = new FileTable<>();
-        IList<IValue> out5 = new List<IValue>();
+        IList<IValue> out5 = new List<>();
         IHeapTable<Integer, IValue> heapTable5 = new HeapTable<>();
 
         IStatement program5 = new CompStatement(

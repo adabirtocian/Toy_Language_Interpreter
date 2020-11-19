@@ -2,9 +2,7 @@ package Model.Statements;
 
 import Model.ADTs.IDictionary;
 import Model.ADTs.IHeapTable;
-import Model.Exceptions.InvalidTypeException;
-import Model.Exceptions.MyException;
-import Model.Exceptions.StatementException;
+import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
 import Model.Types.ReferenceType;
@@ -27,14 +25,14 @@ public class HeapWritingStatement implements IStatement{
         IHeapTable<Integer, IValue> heapTable = state.getHeapTable();
 
         if(! symbolTable.isDefined(this.variableName))
-            throw new StatementException("Heap writing: variable " + this.variableName + " not defined");
+            throw new UndeclaredVariableException("Heap writing: variable " + this.variableName + " not defined");
 
         IValue refValue = symbolTable.lookup(this.variableName);
         if(! (refValue.getType() instanceof ReferenceType))
             throw new InvalidTypeException("Heap writing: variable " + this.variableName + " is not a reference type");
         int address = ((ReferenceValue) refValue).getHeapAddress();
         if(!heapTable.isDefined(address))
-            throw new StatementException("Heap writing: address " + address + " not in heap table");
+            throw new InvalidKeyException("Heap writing: address " + address + " not in heap table");
 
         IValue expressionResult = this.expression.evaluate(symbolTable, heapTable);
         IValue locationTypeInHeap = heapTable.lookup(address);

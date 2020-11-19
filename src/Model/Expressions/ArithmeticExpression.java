@@ -2,7 +2,8 @@ package Model.Expressions;
 
 import Model.ADTs.IDictionary;
 import Model.ADTs.IHeapTable;
-import Model.Exceptions.EvaluationException;
+import Model.Exceptions.DivisionByZeroException;
+import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
 import Model.Types.IntType;
 import Model.Values.IValue;
@@ -59,13 +60,13 @@ public class ArithmeticExpression implements IExpression{
                 if(this.operation == '-') return new IntValue(realIntValue1-realIntValue2);
                 if(this.operation == '*') return new IntValue(realIntValue1*realIntValue2);
                 if(this.operation == '/') {
-                    if (realIntValue2 == 0) throw new EvaluationException("Division by zero");
+                    if (realIntValue2 == 0) throw new DivisionByZeroException("Division by zero");
                     else return new IntValue(realIntValue1 / realIntValue2);
                 }
             }
-            else throw new EvaluationException("Second operand is not an Integer");
+            else throw new InvalidTypeException("Second operand is not an Integer");
         }
-        else throw new EvaluationException("First operand is not an Integer");
+        else throw new InvalidTypeException("First operand is not an Integer");
 
         return null;
     }

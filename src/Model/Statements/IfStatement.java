@@ -1,8 +1,8 @@
 package Model.Statements;
 
 import Model.ADTs.IStack;
+import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
-import Model.Exceptions.StatementException;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
 import Model.Types.BoolType;
@@ -50,7 +50,7 @@ public class IfStatement implements IStatement{
         IValue valueExpression = this.expression.evaluate(state.getSymbolTabel(), state.getHeapTable());
         IType type = valueExpression.getType();
         if(!type.equals(new BoolType())) {
-            throw new StatementException("Conditional expression is not a boolean");
+            throw new InvalidTypeException("Conditional expression is not a boolean");
         }
         else {
             IStack<IStatement> exeStack = state.getExeStack();
@@ -68,7 +68,7 @@ public class IfStatement implements IStatement{
     }
 
     public String toString() {
-        return "(if (" + this.expression.toString() + ") then (" + this.thenStatement.toString() + ") else (" +
-                this.elseStatement.toString() + "))";
+        return "if (" + this.expression.toString() + ") then (" + this.thenStatement.toString() + ") else (" +
+                this.elseStatement.toString() + ")";
     }
 }

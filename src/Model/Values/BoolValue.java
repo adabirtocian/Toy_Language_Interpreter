@@ -32,7 +32,6 @@ public class BoolValue implements IValue {
 
     @Override
     public IValue deepCopy() {
-        BoolValue cloned = new BoolValue(this.value);
-        return cloned;
+        return new BoolValue(this.value);
     }
 }

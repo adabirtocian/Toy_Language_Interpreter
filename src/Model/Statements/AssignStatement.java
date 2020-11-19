@@ -2,8 +2,7 @@ package Model.Statements;
 
 import Model.ADTs.IDictionary;
 import Model.ADTs.IStack;
-import Model.Exceptions.MyException;
-import Model.Exceptions.StatementException;
+import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
 import Model.Types.IType;
@@ -36,19 +35,20 @@ public class AssignStatement implements IStatement {
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        IStack<IStatement> exeStack = state.getExeStack();
         IDictionary<String, IValue> symbolTable = state.getSymbolTabel();
 
         if(symbolTable.isDefined(this.id)) {
             IValue value = this.expression.evaluate(symbolTable, state.getHeapTable());
-            IType typeId = (IType) (symbolTable.lookup(this.id)).getType();
+            IType typeId = (symbolTable.lookup(this.id)).getType();
             if(value.getType().equals(typeId)) {
                 symbolTable.update(this.id, value);
-            } else {
-                throw new StatementException("Declared type of " + this.id + " does not match the type of the assigned expression\n");
             }
-        } else {
-            throw new StatementException("Variable " + this.id + " was not yet declared\n");
+            else {
+                throw new InvalidTypeException("Assignment statement: Mismatched types");
+            }
+        }
+        else {
+            throw new UndeclaredVariableException("Assignment statement: Variable " + this.id + " was not yet declared");
         }
         return state;
     }

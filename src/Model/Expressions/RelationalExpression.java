@@ -2,20 +2,21 @@ package Model.Expressions;
 
 import Model.ADTs.IDictionary;
 import Model.ADTs.IHeapTable;
-import Model.Exceptions.EvaluationException;
+import Model.Exceptions.InvalidOperatorException;
+import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
 import Model.Types.IntType;
 import Model.Values.BoolValue;
 import Model.Values.IValue;
 import Model.Values.IntValue;
 
-public class RelationalExpressions implements IExpression{
+public class RelationalExpression implements IExpression{
 
     private IExpression expression1;
     private IExpression expression2;
     private String operator;
 
-    public RelationalExpressions(IExpression expression1, IExpression expression2, String operator) {
+    public RelationalExpression(IExpression expression1, IExpression expression2, String operator) {
         this.expression1 = expression1;
         this.expression2 = expression2;
         this.operator = operator;
@@ -31,31 +32,24 @@ public class RelationalExpressions implements IExpression{
                 IntValue intValue2 = (IntValue) iValue2;
                 int realIntValue1 = intValue1.getValue();
                 int realIntValue2 = intValue2.getValue();
-                switch (this.operator) {
-                    case "<":
-                        return new BoolValue(realIntValue1 < realIntValue2);
-                    case "<=":
-                        return new BoolValue(realIntValue1 <= realIntValue2);
-                    case "==":
-                        return  new BoolValue(realIntValue1 == realIntValue2);
-                    case "!=":
-                        return new BoolValue(realIntValue1 != realIntValue2);
-                    case ">":
-                        return new BoolValue(realIntValue1 > realIntValue2);
-                    case ">=":
-                        return new BoolValue(realIntValue1 >= realIntValue2);
-                }
+                return switch (this.operator) {
+                    case "<" -> new BoolValue(realIntValue1 < realIntValue2);
+                    case "<=" -> new BoolValue(realIntValue1 <= realIntValue2);
+                    case "==" -> new BoolValue(realIntValue1 == realIntValue2);
+                    case "!=" -> new BoolValue(realIntValue1 != realIntValue2);
+                    case ">" -> new BoolValue(realIntValue1 > realIntValue2);
+                    case ">=" -> new BoolValue(realIntValue1 >= realIntValue2);
+                    default -> throw new InvalidOperatorException("Relational expression: Invalid relational operator");
+                };
             }
-            else throw new EvaluationException("Second operand is not an Integer");
+            else throw new InvalidTypeException("Second operand is not an Integer");
         }
-        else throw new EvaluationException("First operand is not an Integer");
-
-        return null;
+        else throw new InvalidTypeException("First operand is not an Integer");
     }
 
     @Override
     public IExpression deepCopy() {
-        return new RelationalExpressions(this.expression1.deepCopy(), this.expression2.deepCopy(), this.operator);
+        return new RelationalExpression(this.expression1.deepCopy(), this.expression2.deepCopy(), this.operator);
     }
 
     @Override

@@ -1,8 +1,8 @@
 package Controller;
 
 import Model.ADTs.IStack;
+import Model.Exceptions.EmptyStackException;
 import Model.Exceptions.MyException;
-import Model.Exceptions.StatementException;
 import Model.ProgramState;
 import Model.Statements.IStatement;
 import Repository.IRepository;
@@ -24,7 +24,7 @@ public class Controller {
     public ProgramState oneStep(ProgramState state) throws MyException {
         IStack<IStatement> exeStack = state.getExeStack();
         if(exeStack.isEmpty()) {
-            throw new StatementException("ExeStack is empty");
+            throw new EmptyStackException("ExeStack is empty");
         }
 
         IStatement currentStatement = exeStack.pop();

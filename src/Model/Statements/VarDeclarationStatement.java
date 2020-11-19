@@ -1,8 +1,8 @@
 package Model.Statements;
 
 import Model.ADTs.IDictionary;
+import Model.Exceptions.InvalidKeyException;
 import Model.Exceptions.MyException;
-import Model.Exceptions.StatementException;
 import Model.ProgramState;
 import Model.Types.IType;
 import Model.Values.IValue;
@@ -36,12 +36,11 @@ public class VarDeclarationStatement implements IStatement {
     public ProgramState execute(ProgramState state) throws MyException {
         IDictionary<String, IValue> symbolTabel = state.getSymbolTabel();
         if(symbolTabel.isDefined(this.id)) {
-            throw new StatementException("Variable already declared");
+            throw new InvalidKeyException("Variable already declared");
         }
         else {
             symbolTabel.add(this.id, this.type.defaultIValue());
         }
-
         return state;
     }
 

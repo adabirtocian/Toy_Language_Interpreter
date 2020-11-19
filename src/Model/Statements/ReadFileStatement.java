@@ -2,8 +2,7 @@ package Model.Statements;
 
 import Model.ADTs.IDictionary;
 import Model.ADTs.IStack;
-import Model.Exceptions.MyException;
-import Model.Exceptions.ReadFileException;
+import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
 import Model.Types.IntType;
@@ -31,12 +30,12 @@ public class ReadFileStatement implements IStatement{
 
         if(symbolTable.isDefined(this.variableName)) {
             if(! symbolTable.lookup(this.variableName).getType().equals(new IntType()))
-                throw new ReadFileException("ReadFile: Variable type is not int");
-        } else throw new ReadFileException("ReadFile: Variable not defined");
+                throw new InvalidTypeException("ReadFile: Variable type is not int");
+        } else throw new UndeclaredVariableException("ReadFile: Variable not defined");
 
         IValue expressionValue = this.expression.evaluate(symbolTable, state.getHeapTable());
         if(! expressionValue.getType().equals(new StringType()))
-            throw new ReadFileException("ReadFile: Expression value not string");
+            throw new InvalidTypeException("ReadFile: Expression value not string");
 
         try {
             BufferedReader reader = state.getFileTable().lookup((StringValue)expressionValue);
@@ -47,7 +46,7 @@ public class ReadFileStatement implements IStatement{
             symbolTable.update(this.variableName, intValue);
         }
         catch (MyException exception) {
-            throw new ReadFileException("ReadFile: No reader for the given key");
+            throw new InvalidKeyException("ReadFile: No reader for the given key");
         }
         catch (IOException exception) {
             throw new ReadFileException("ReadFile: Could not read a value from the file");

@@ -2,9 +2,7 @@ package Model.Statements;
 
 import Model.ADTs.IDictionary;
 import Model.ADTs.IStack;
-import Model.Exceptions.CloseFileException;
-import Model.Exceptions.MyException;
-import Model.Exceptions.ReadFileException;
+import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
 import Model.Types.StringType;
@@ -24,12 +22,11 @@ public class CloseRFileStatement implements IStatement {
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        IStack<IStatement> exeStack = state.getExeStack();
         IDictionary<StringValue, BufferedReader> fileTable = state.getFileTable();
 
         IValue expressionValue = this.expression.evaluate(state.getSymbolTabel(), state.getHeapTable());
         if(! expressionValue.getType().equals(new StringType()))
-            throw new CloseFileException("CloseFile: Expression value not string");
+            throw new InvalidTypeException("CloseFile: Expression value not string");
 
         try {
             BufferedReader reader = state.getFileTable().lookup((StringValue)expressionValue);
@@ -37,10 +34,10 @@ public class CloseRFileStatement implements IStatement {
             fileTable.remove((StringValue)expressionValue);
         }
         catch (MyException exception) {
-            throw new CloseFileException("CloseFile: No reader for the given key");
+            throw new InvalidKeyException("CloseFile: No reader for the given key");
         }
         catch (IOException exception) {
-            throw new ReadFileException("CloseFile: Could not close the file");
+            throw new CloseFileException("CloseFile: Could not close the file");
         }
         return state;
     }

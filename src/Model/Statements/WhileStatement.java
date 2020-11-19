@@ -1,8 +1,8 @@
 package Model.Statements;
 
 import Model.ADTs.IStack;
+import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
-import Model.Exceptions.StatementException;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
 import Model.Types.BoolType;
@@ -25,7 +25,7 @@ public class WhileStatement implements IStatement {
         IValue valueExpression = this.expression.evaluate(state.getSymbolTabel(), state.getHeapTable());
         IType typeExpression = valueExpression.getType();
         if(! typeExpression.equals(new BoolType()))
-            throw new StatementException("Conditional expression is not a boolean");
+            throw new InvalidTypeException("Conditional expression is not a boolean");
         else {
             IStack<IStatement> exeStack = state.getExeStack();
             boolean condition = ((BoolValue) valueExpression).getValue();

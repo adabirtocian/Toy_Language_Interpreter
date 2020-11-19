@@ -1,9 +1,7 @@
 package Model.Statements;
 
 import Model.ADTs.IDictionary;
-import Model.Exceptions.MyException;
-import Model.Exceptions.OpenFileException;
-import Model.Exceptions.StatementException;
+import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
 import Model.Types.StringType;
@@ -27,10 +25,10 @@ public class OpenRFileStatement  implements IStatement{
         IValue expressionValue = this.expression.evaluate(state.getSymbolTabel(), state.getHeapTable());
 
         if( ! expressionValue.getType().equals(new StringType()))
-            throw new StatementException("OpenFile: Expression not a string");
+            throw new InvalidTypeException("OpenFile: Expression not a string");
 
         if(fileTable.isDefined((StringValue) expressionValue))
-            throw new OpenFileException("OpenFile: File already exists");
+            throw new InvalidKeyException("OpenFile: File already exists");
 
         String filePath = ((StringValue) expressionValue).getValue();
         try {

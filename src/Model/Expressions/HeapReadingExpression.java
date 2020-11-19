@@ -2,7 +2,7 @@ package Model.Expressions;
 
 import Model.ADTs.IDictionary;
 import Model.ADTs.IHeapTable;
-import Model.Exceptions.EvaluationException;
+import Model.Exceptions.InvalidKeyException;
 import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
 import Model.Types.ReferenceType;
@@ -22,14 +22,14 @@ public class HeapReadingExpression implements IExpression {
         IValue expressionResult = this.expression.evaluate(symbolTable, heapTable);
         if(! (expressionResult.getType() instanceof ReferenceType))
             throw new InvalidTypeException("Heap reading: expression does not evaluate to reference type");
+
         ReferenceValue resultReferenceValue = (ReferenceValue)expressionResult;
         int address = resultReferenceValue.getHeapAddress();
 
         if(! heapTable.isDefined(address))
-            throw new EvaluationException("Heap reading: invalid address in the heap");
+            throw new InvalidKeyException("Heap reading: invalid address in the heap");
         
         return heapTable.lookup(address);
-
     }
 
     @Override

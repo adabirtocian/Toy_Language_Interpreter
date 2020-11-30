@@ -59,7 +59,7 @@ public class IfStatement implements IStatement{
             if(condition) exeStack.push(this.thenStatement);
             else exeStack.push(this.elseStatement);
         }
-        return state;
+        return null;
     }
 
     @Override

@@ -35,7 +35,7 @@ public class CompStatement implements IStatement {
         exeStack.push(this.secondStatement);
         exeStack.push(this.firstStatement);
 
-        return state;
+        return null;
     }
 
     @Override

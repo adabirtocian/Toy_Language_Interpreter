@@ -19,7 +19,7 @@ public class PrintStatement implements IStatement {
         IValue valueExpression = this.expression.evaluate(state.getSymbolTabel(), state.getHeapTable());
         out.add(valueExpression);
 
-        return state;
+        return null;
     }
 
     @Override

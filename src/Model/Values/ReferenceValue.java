@@ -28,7 +28,7 @@ public class ReferenceValue implements IValue {
 
     @Override
     public IType getType() {
-        return new ReferenceType(locationType);
+        return new ReferenceType(this.locationType);
     }
 
     @Override

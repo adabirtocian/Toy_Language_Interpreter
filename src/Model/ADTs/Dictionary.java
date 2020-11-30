@@ -2,10 +2,11 @@ package Model.ADTs;
 import Model.Exceptions.InvalidKeyException;
 import Model.Exceptions.MyException;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
 
-    protected final HashMap<T1,T2> dictionary;
+    protected HashMap<T1,T2> dictionary;
 
     public Dictionary() {
         this.dictionary = new HashMap<>();
@@ -46,6 +47,25 @@ public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
     @Override
     public boolean isDefined(T1 key) {
         return this.dictionary.containsKey(key);
+    }
+
+    @Override
+    public Map<T1, T2> getContent() {
+        return this.dictionary;
+    }
+
+    @Override
+    public void setContent(Map<T1, T2> newContent) {
+        this.dictionary = (HashMap<T1, T2>) newContent;
+    }
+
+    @Override
+    public IDictionary<T1, T2> deepCopy() {
+        IDictionary<T1, T2> newDictionary = new Dictionary<>();
+        for(T1 key: this.dictionary.keySet())
+            newDictionary.add(key, this.dictionary.get(key));
+
+        return newDictionary;
     }
 
 

@@ -4,6 +4,7 @@ import Model.ADTs.IDictionary;
 import Model.ADTs.IHeapTable;
 import Model.ADTs.IList;
 import Model.ADTs.IStack;
+import Model.Exceptions.MyException;
 import Model.Statements.IStatement;
 import Model.Values.IValue;
 import Model.Values.StringValue;
@@ -18,6 +19,7 @@ public class ProgramState{
     IStatement originalProgram;
     IDictionary<StringValue, BufferedReader> fileTable;
     IHeapTable<Integer, IValue> heapTable;
+    static int programStateId;
 
     public IStack<IStatement> getExeStack() {
         return exeStack;
@@ -53,18 +55,30 @@ public class ProgramState{
         this.exeStack.push(originalProgram);
     }
 
+    public boolean isNotCompleted() {
+        return ! this.exeStack.isEmpty();
+    }
+
+    public ProgramState oneStep() throws MyException {
+        if(this.exeStack.isEmpty()) throw new MyException("Program state stack is empty");
+        IStatement currentStatement = this.exeStack.pop();
+
+        return currentStatement.execute(this);
+    }
+
     public String toString() {
         return  "================== Next step ==================\n" +
-                "FileTable\n" +
-                this.fileTable.toString() + "\n\n" +
+                "Id: " + programStateId +
                 "ExeStack\n" +
                 this.exeStack.toString() + "\n\n" +
                 "Symbol table\n" +
                 this.symbolTabel.toString() + "\n\n" +
-                "Output\n" +
-                this.out.toString() + "\n\n" +
+                "FileTable\n" +
+                this.fileTable.toString() + "\n\n" +
                 "HeapTable\n" +
-                this.heapTable.toString() + "\n\n";
+                this.heapTable.toString() + "\n\n" +
+                "Output\n" +
+                this.out.toString() + "\n\n";
     }
 
 }

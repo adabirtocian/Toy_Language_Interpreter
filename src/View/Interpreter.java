@@ -19,10 +19,10 @@ import java.io.BufferedReader;
 public class Interpreter {
     public static void main(String[] args) {
 
-        IStack<IStatement> exeStack1 = new MyStack<IStatement>();
-        IDictionary<String, IValue> symbolTable1 = new Dictionary<String, IValue>();
+        IStack<IStatement> exeStack1 = new MyStack<>();
+        IDictionary<String, IValue> symbolTable1 = new Dictionary<>();
         IDictionary<StringValue, BufferedReader> fileTable1 = new FileTable<>();
-        IList<IValue> out1 = new List<IValue>();
+        IList<IValue> out1 = new List<>();
         IHeapTable<Integer, IValue> heapTable1 = new HeapTable<>();
 
         // string varf; varf = "test.txt"; open(varf); int varc; readRFile(varf, varc); print(varc); readRFile(varf, varc); print(varc); close(varf)
@@ -48,10 +48,10 @@ public class Interpreter {
         Controller controller1 = new Controller(repository1);
         controller1.addProgram(programState1);
 
-        IStack<IStatement> exeStack2 = new MyStack<IStatement>();
-        IDictionary<String, IValue> symbolTable2 = new Dictionary<String, IValue>();
+        IStack<IStatement> exeStack2 = new MyStack<>();
+        IDictionary<String, IValue> symbolTable2 = new Dictionary<>();
         IDictionary<StringValue, BufferedReader> fileTable2 = new FileTable<>();
-        IList<IValue> out2 = new List<IValue>();
+        IList<IValue> out2 = new List<>();
         IHeapTable<Integer, IValue> heapTable2 = new HeapTable<>();
 
         // string varf; varf=test.txt; openfile(varf); int varc; int a; readfile(varf,varc); print(varc); readfile(varf,a); if (a>varc) then (print(a) else print(varc); closefile(varf)
@@ -86,10 +86,10 @@ public class Interpreter {
         Controller controller2 = new Controller(repository2);
         controller2.addProgram(programState2);
 
-        IStack<IStatement> exeStack3 = new MyStack<IStatement>();
-        IDictionary<String, IValue> symbolTable3 = new Dictionary<String, IValue>();
+        IStack<IStatement> exeStack3 = new MyStack<>();
+        IDictionary<String, IValue> symbolTable3 = new Dictionary<>();
         IDictionary<StringValue, BufferedReader> fileTable3 = new FileTable<>();
-        IList<IValue> out3 = new List<IValue>();
+        IList<IValue> out3 = new List<>();
         IHeapTable<Integer, IValue> heapTable3 = new HeapTable<>();
 
         // string varf; varf=test.txt; openfile(varf); int a; readfile(varf,a); if (10>a) then print(a less than 10) else print(a greater than 10); closefile(varf)
@@ -120,10 +120,10 @@ public class Interpreter {
 
 
         // int a; int b; string file; file="test.txt"; open(file); readRFile(file, a), readRFile(file, b); a=a*2; b=a+1; print(a); print(b); close(file)
-        IStack<IStatement> exeStack4 = new MyStack<IStatement>();
-        IDictionary<String, IValue> symbolTable4 = new Dictionary<String, IValue>();
+        IStack<IStatement> exeStack4 = new MyStack<>();
+        IDictionary<String, IValue> symbolTable4 = new Dictionary<>();
         IDictionary<StringValue, BufferedReader> fileTable4 = new FileTable<>();
-        IList<IValue> out4 = new List<IValue>();
+        IList<IValue> out4 = new List<>();
         IHeapTable<Integer, IValue> heapTable4 = new HeapTable<>();
 
         IStatement program4 = new CompStatement(
@@ -196,6 +196,60 @@ public class Interpreter {
         Controller controller5 = new Controller(repository5);
         controller5.addProgram(programState5);
 
+        //Ref int v;new(v,20);Ref Ref int a; new(a,v); writeheap(v,30);print(rH(rH(a)))
+        IStack<IStatement> exeStack6 = new MyStack<>();
+        IDictionary<String, IValue> symbolTable6 = new Dictionary<>();
+        IDictionary<StringValue, BufferedReader> fileTable6 = new FileTable<>();
+        IList<IValue> out6 = new List<>();
+        IHeapTable<Integer, IValue> heapTable6 = new HeapTable<>();
+
+        IStatement program6 = new CompStatement(
+                new VarDeclarationStatement("v", new ReferenceType(new IntType())),
+                new CompStatement(
+                        new HeapAllocationStatement("v", new ValueExpression(new IntValue(20))),
+                        new CompStatement(
+                                new VarDeclarationStatement("a", new ReferenceType(new ReferenceType(new IntType()))),
+                                new CompStatement(
+                                        new HeapAllocationStatement("a", new VarExpression("v")),
+                                        new CompStatement(
+                                            new HeapWritingStatement("v", new ValueExpression(new IntValue(30))),
+                                                new PrintStatement(new HeapReadingExpression(
+                                                        new HeapReadingExpression(new VarExpression("a")))))))));
+
+        ProgramState programState6 = new ProgramState(exeStack6, symbolTable6, out6, program6, fileTable6, heapTable6);
+        IRepository repository6 = new Repository("log6.txt");
+        Controller controller6 = new Controller(repository6);
+        controller6.addProgram(programState6);
+
+        //int v; v=4; (while (v>0) print(v);v=v-1);print(v)
+        IStack<IStatement> exeStack7 = new MyStack<>();
+        IDictionary<String, IValue> symbolTable7 = new Dictionary<>();
+        IDictionary<StringValue, BufferedReader> fileTable7 = new FileTable<>();
+        IList<IValue> out7 = new List<>();
+        IHeapTable<Integer, IValue> heapTable7 = new HeapTable<>();
+
+        IStatement program7 = new CompStatement(
+                new VarDeclarationStatement("v", new IntType()),
+                new CompStatement(
+                        new AssignStatement("v", new ValueExpression(new IntValue(4))),
+                        new CompStatement(
+                                new WhileStatement(
+                                        new RelationalExpression(new VarExpression("v"), new ValueExpression(new IntValue(0)), ">"),
+                                        new CompStatement(
+                                                new PrintStatement(new VarExpression("v")),
+                                                new AssignStatement("v",
+                                                        new ArithmeticExpression(new VarExpression("v"), new ValueExpression(new IntValue(1)), '-'))
+                                        )
+                                ),
+                                new PrintStatement(new VarExpression("v"))
+                        )
+                )
+
+        );
+        ProgramState programState7 = new ProgramState(exeStack7, symbolTable7, out7, program7, fileTable7, heapTable7);
+        IRepository repository7 = new Repository("log7.txt");
+        Controller controller7 = new Controller(repository7);
+        controller7.addProgram(programState7);
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
@@ -204,6 +258,8 @@ public class Interpreter {
         menu.addCommand(new RunExampleCommand("3", program3.toString(), controller3));
         menu.addCommand(new RunExampleCommand("4", program4.toString(), controller4));
         menu.addCommand(new RunExampleCommand("5", program5.toString(), controller5));
+        menu.addCommand(new RunExampleCommand("6", program6.toString(), controller6));
+        menu.addCommand(new RunExampleCommand("7", program7.toString(), controller7));
         menu.show();
     }
 }

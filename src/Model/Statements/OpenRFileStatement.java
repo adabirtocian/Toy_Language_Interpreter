@@ -39,7 +39,7 @@ public class OpenRFileStatement  implements IStatement{
         } catch (IOException exception) {
             throw new OpenFileException("OpenFile: File" + filePath + " not found");
         }
-        return state;
+        return null;
     }
 
     @Override

@@ -23,8 +23,7 @@ public class HeapReadingExpression implements IExpression {
         if(! (expressionResult.getType() instanceof ReferenceType))
             throw new InvalidTypeException("Heap reading: expression does not evaluate to reference type");
 
-        ReferenceValue resultReferenceValue = (ReferenceValue)expressionResult;
-        int address = resultReferenceValue.getHeapAddress();
+        int address = ((ReferenceValue)expressionResult).getHeapAddress();
 
         if(! heapTable.isDefined(address))
             throw new InvalidKeyException("Heap reading: invalid address in the heap");
@@ -41,4 +40,5 @@ public class HeapReadingExpression implements IExpression {
     public String toString() {
         return "readHeap(" + this.expression.toString() + ")";
     }
+
 }

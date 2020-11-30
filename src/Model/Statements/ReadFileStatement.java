@@ -52,7 +52,7 @@ public class ReadFileStatement implements IStatement{
             throw new ReadFileException("ReadFile: Could not read a value from the file");
         }
 
-        return state;
+        return null;
     }
 
     @Override

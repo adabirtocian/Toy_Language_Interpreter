@@ -34,11 +34,16 @@ public class WhileStatement implements IStatement {
                 exeStack.push(this.statement);
             }
         }
-        return state;
+        return null;
     }
 
     @Override
     public IStatement deepCopy() {
         return new WhileStatement(this.expression.deepCopy(), this.statement.deepCopy());
+    }
+
+    @Override
+    public String toString() {
+        return "while( " + this.expression.toString() + " ) {" + this.statement.toString() + "}";
     }
 }

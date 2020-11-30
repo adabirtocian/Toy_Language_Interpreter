@@ -50,7 +50,7 @@ public class AssignStatement implements IStatement {
         else {
             throw new UndeclaredVariableException("Assignment statement: Variable " + this.id + " was not yet declared");
         }
-        return state;
+        return null;
     }
 
     @Override

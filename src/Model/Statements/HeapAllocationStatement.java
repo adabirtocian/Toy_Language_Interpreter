@@ -21,23 +21,25 @@ public class HeapAllocationStatement implements IStatement{
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        if(! state.getSymbolTabel().isDefined(this.variableName))
+        var symbolTable = state.getSymbolTabel();
+        var heapTable = state.getHeapTable();
+        if(! symbolTable.isDefined(this.variableName))
             throw new UndeclaredVariableException("Heap allocation: variable " +  this.variableName +" not declared");
 
-        IValue refValue = state.getSymbolTabel().lookup(this.variableName);
-        if(! (refValue.getType() instanceof ReferenceType))
+        IValue variableValue = symbolTable.lookup(this.variableName);
+        if(! (variableValue.getType() instanceof ReferenceType))
             throw new InvalidTypeException("Heap allocation: variable " + this.variableName + " not a reference type");
 
-        IValue expressionResult = this.expression.evaluate(state.getSymbolTabel(), state.getHeapTable());
+        IValue expressionResult = this.expression.evaluate(symbolTable, heapTable);
 
-        if(! expressionResult.getType().equals(((ReferenceValue)refValue).getLocationType()))
+        if(! expressionResult.getType().equals(((ReferenceValue)variableValue).getLocationType()))
             throw new InvalidTypeException("Heap allocation: reference location type and expression type do not match");
 
-        int address = state.getHeapTable().getNewFreeLocation();
-        state.getHeapTable().add(address, expressionResult);
-        state.getSymbolTabel().update(this.variableName, new ReferenceValue(address, ((ReferenceValue)refValue).getLocationType()));
+        int address = heapTable.getNewFreeLocation();
+        heapTable.add(address, expressionResult);
+        symbolTable.update(this.variableName, new ReferenceValue(address, ((ReferenceValue)variableValue).getLocationType()));
 
-        return state;
+        return null;
     }
 
     @Override

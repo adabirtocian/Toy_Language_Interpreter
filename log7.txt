@@ -1,0 +1,384 @@
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(int v; (v=4; (Model.Statements.WhileStatement@68de145; print(v)))) || 
+
+Symbol table
+{}
+
+Output
+[]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+int v || (v=4; (Model.Statements.WhileStatement@68de145; print(v))) || 
+
+Symbol table
+{}
+
+Output
+[]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(v=4; (Model.Statements.WhileStatement@68de145; print(v))) || 
+
+Symbol table
+{v=0}
+
+Output
+[]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+v=4 || (Model.Statements.WhileStatement@68de145; print(v)) || 
+
+Symbol table
+{v=0}
+
+Output
+[]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(Model.Statements.WhileStatement@68de145; print(v)) || 
+
+Symbol table
+{v=4}
+
+Output
+[]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=4}
+
+Output
+[]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(print(v); v=v-1) || Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=4}
+
+Output
+[]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+print(v) || v=v-1 || Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=4}
+
+Output
+[]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+v=v-1 || Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=4}
+
+Output
+[4]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=3}
+
+Output
+[4]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(print(v); v=v-1) || Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=3}
+
+Output
+[4]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+print(v) || v=v-1 || Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=3}
+
+Output
+[4]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+v=v-1 || Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=3}
+
+Output
+[4, 3]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=2}
+
+Output
+[4, 3]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(print(v); v=v-1) || Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=2}
+
+Output
+[4, 3]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+print(v) || v=v-1 || Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=2}
+
+Output
+[4, 3]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+v=v-1 || Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=2}
+
+Output
+[4, 3, 2]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=1}
+
+Output
+[4, 3, 2]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+(print(v); v=v-1) || Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=1}
+
+Output
+[4, 3, 2]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+print(v) || v=v-1 || Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=1}
+
+Output
+[4, 3, 2]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+v=v-1 || Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=1}
+
+Output
+[4, 3, 2, 1]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+Model.Statements.WhileStatement@68de145 || print(v) || 
+
+Symbol table
+{v=0}
+
+Output
+[4, 3, 2, 1]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+print(v) || 
+
+Symbol table
+{v=0}
+
+Output
+[4, 3, 2, 1]
+
+HeapTable
+{}
+
+================== Next step ==================
+FileTable
+[]
+
+ExeStack
+
+
+Symbol table
+{v=0}
+
+Output
+[4, 3, 2, 1, 0]
+
+HeapTable
+{}
+

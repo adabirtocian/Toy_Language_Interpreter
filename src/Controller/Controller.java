@@ -1,15 +1,23 @@
 package Controller;
 
-import Model.ADTs.IStack;
-import Model.Exceptions.EmptyStackException;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
-import Model.Statements.IStatement;
+import Model.Values.IValue;
+import Model.Values.ReferenceValue;
 import Repository.IRepository;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.stream.Collectors;
 
 public class Controller {
-    IRepository repository;
-    StringBuilder stringAllSteps;
+    private IRepository repository;
+    private StringBuilder stringAllSteps;
+    private ExecutorService executor;
 
 
     public Controller(IRepository repository) {
@@ -21,36 +29,71 @@ public class Controller {
         this.repository.addProgramState(programState);
     }
 
-    public ProgramState oneStep(ProgramState state) throws MyException {
-        IStack<IStatement> exeStack = state.getExeStack();
-        if(exeStack.isEmpty()) {
-            throw new EmptyStackException("ExeStack is empty");
-        }
-
-        IStatement currentStatement = exeStack.pop();
-        return currentStatement.execute(state);
+    public List<ProgramState> removeCompletedPrograms(List<ProgramState> programStateList) {
+        return programStateList.stream()
+                .filter(ProgramState::isNotCompleted)
+                .collect(Collectors.toList());
     }
 
     public void allSteps() throws MyException{
-        ProgramState programState = this.repository.getCurrentProgramState();
-        this.repository.logProgramStateExecution();
-        while(!programState.getExeStack().isEmpty()) {
-            ProgramState newProgramState = this.oneStep(programState);
-            //this.addStepOutput(newProgramState);
-            this.repository.logProgramStateExecution();
+        this.executor = Executors.newFixedThreadPool(2);
+        List<ProgramState> programStateList = this.removeCompletedPrograms(this.repository.getProgramStateList());
+        while(programStateList.size() > 0) {
+            this.oneStepForAllPrograms(programStateList);
+            programStateList = this.removeCompletedPrograms(this.repository.getProgramStateList());
+        }
+        this.executor.shutdownNow();
+        this.repository.setProgramStateList(programStateList);
+    }
+
+    public void oneStepForAllPrograms(List<ProgramState> programStateList) {
+        programStateList.forEach(program -> this.repository.logProgramStateExecution(program));
+
+        List<Callable<ProgramState>> callList = programStateList.stream()
+                .map((ProgramState program) -> (Callable<ProgramState>)(program::oneStep))
+                .collect(Collectors.toList());
+
+        try {
+            List<ProgramState> newProgramStateList = this.executor.invokeAll(callList).stream()
+                    .map(future -> {
+                        try {
+                            return future.get();
+                        }
+                        catch(Exception exception) {
+                            System.out.println(exception.getMessage());
+                            return null;
+                        }
+                    })
+                    .filter(Objects::nonNull)
+                    .collect(Collectors.toList());
+
+            programStateList.addAll(newProgramStateList);
+            programStateList.forEach(program -> this.repository.logProgramStateExecution(program));
+            this.repository.setProgramStateList(programStateList);
+
+        }
+        catch(InterruptedException | MyException exception) {
+            System.out.println(exception.getMessage());
         }
     }
 
-    public String getOutput() throws MyException {
-        return "Output\n[" + this.repository.getCurrentProgramState().getOut().toString() + "]\n";
+    private Map<Integer, IValue> garbageCollector(List<Integer> symbolTabelAddresses, List<Integer> heapTableAddresses, Map<Integer, IValue> heapTable) {
+        return heapTable.entrySet().stream()
+                .filter(entry -> symbolTabelAddresses.contains(entry.getKey()) || heapTableAddresses.contains(entry.getKey()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
-    public String getAllSteps() {
-        return this.stringAllSteps.toString();
+    private List<Integer> getAllSymbolTabelAddresses(Collection<IValue> symbolTabel) {
+        return symbolTabel.stream()
+                .filter(variable -> variable instanceof ReferenceValue)
+                .map(variable -> ((ReferenceValue) variable).getHeapAddress())
+                .collect(Collectors.toList());
     }
 
-    public void addStepOutput(ProgramState currentProgramState) {
-        this.stringAllSteps.append("==== Next step ====\n");
-        this.stringAllSteps.append(currentProgramState.toString());
+    private List<Integer> getAllHeapTabelAddresses(Collection<IValue> heapTabel) {
+        return heapTabel.stream()
+                .filter(variable -> variable instanceof ReferenceValue)
+                .map(variable -> ((ReferenceValue) variable).getHeapAddress())
+                .collect(Collectors.toList());
     }
 }

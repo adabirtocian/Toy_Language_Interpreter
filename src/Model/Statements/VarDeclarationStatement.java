@@ -17,7 +17,7 @@ public class VarDeclarationStatement implements IStatement {
     }
 
     public String getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(String id) {
@@ -25,7 +25,7 @@ public class VarDeclarationStatement implements IStatement {
     }
 
     public IType getType() {
-        return type;
+        return this.type;
     }
 
     public void setType(IType type) {
@@ -38,10 +38,10 @@ public class VarDeclarationStatement implements IStatement {
         if(symbolTabel.isDefined(this.id)) {
             throw new InvalidKeyException("Variable already declared");
         }
-        else {
-            symbolTabel.add(this.id, this.type.defaultIValue());
-        }
-        return state;
+
+        symbolTabel.add(this.id, this.type.defaultIValue());
+
+        return null;
     }
 
     @Override

@@ -39,7 +39,7 @@ public class CloseRFileStatement implements IStatement {
         catch (IOException exception) {
             throw new CloseFileException("CloseFile: Could not close the file");
         }
-        return state;
+        return null;
     }
 
     @Override

@@ -5,10 +5,8 @@ import Model.ProgramState;
 import Model.Values.IValue;
 import Model.Values.ReferenceValue;
 import Repository.IRepository;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+
+import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -39,6 +37,14 @@ public class Controller {
         this.executor = Executors.newFixedThreadPool(2);
         List<ProgramState> programStateList = this.removeCompletedPrograms(this.repository.getProgramStateList());
         while(programStateList.size() > 0) {
+            ProgramState programState = programStateList.get(0);
+            programState.getHeapTable().setContent(
+                    this.garbageCollector(
+                            this.getAllSymbolTabelAddresses(programStateList.stream().map(program -> program.getSymbolTabel().getContent().values()).collect(Collectors.toList())),
+                            this.getAllHeapTabelAddresses(programState.getHeapTable().getContent().values()),
+                            programState.getHeapTable().getContent()
+                    )
+            );
             this.oneStepForAllPrograms(programStateList);
             programStateList = this.removeCompletedPrograms(this.repository.getProgramStateList());
         }
@@ -83,11 +89,13 @@ public class Controller {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
-    private List<Integer> getAllSymbolTabelAddresses(Collection<IValue> symbolTabel) {
-        return symbolTabel.stream()
+    private List<Integer> getAllSymbolTabelAddresses(List<Collection<IValue>> symbolTabelsList) {
+        List<Integer> addresses = new ArrayList<>();
+        symbolTabelsList.forEach(symbolTabel -> symbolTabel.stream()
                 .filter(variable -> variable instanceof ReferenceValue)
                 .map(variable -> ((ReferenceValue) variable).getHeapAddress())
-                .collect(Collectors.toList());
+                .forEach(addresses::add));
+        return addresses;
     }
 
     private List<Integer> getAllHeapTabelAddresses(Collection<IValue> heapTabel) {

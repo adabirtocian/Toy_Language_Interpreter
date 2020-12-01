@@ -251,6 +251,47 @@ public class Interpreter {
         Controller controller7 = new Controller(repository7);
         controller7.addProgram(programState7);
 
+
+        // int v; Ref int a; v=10;new(a,22); fork(wH(a,30);v=32;print(v);print(rH(a))); print(v);print(rH(a))
+        IStack<IStatement> exeStack8 = new MyStack<>();
+        IDictionary<String, IValue> symbolTable8 = new Dictionary<>();
+        IDictionary<StringValue, BufferedReader> fileTable8 = new FileTable<>();
+        IList<IValue> out8 = new List<>();
+        IHeapTable<Integer, IValue> heapTable8 = new HeapTable<>();
+
+        IStatement program8  = new CompStatement(
+                new VarDeclarationStatement("v", new IntType()),
+                new CompStatement(
+                        new VarDeclarationStatement("a", new ReferenceType(new IntType())),
+                        new CompStatement(
+                                new AssignStatement("v", new ValueExpression(new IntValue(10))),
+                                new CompStatement(
+                                        new HeapAllocationStatement("a", new ValueExpression(new IntValue(22))),
+                                        new CompStatement(
+                                                new ForkStatement(
+                                                        new CompStatement(
+                                                                new HeapWritingStatement("a", new ValueExpression(new IntValue(30))),
+                                                                new CompStatement(
+                                                                        new AssignStatement("v", new ValueExpression(new IntValue(32))),
+                                                                        new CompStatement(
+                                                                                new PrintStatement(new VarExpression("v")),
+                                                                                new PrintStatement(new HeapReadingExpression(new VarExpression("a")))
+                                                                        )
+                                                                )
+                                                        )
+                                                ),
+                                                new CompStatement(
+                                                        new PrintStatement(new VarExpression("v")),
+                                                        new PrintStatement(new HeapReadingExpression(new VarExpression("a")))
+                                                )
+                                        )
+                                )
+                        )));
+        ProgramState programState8 = new ProgramState(exeStack8, symbolTable8, out8, program8, fileTable8, heapTable8);
+        IRepository repository8 = new Repository("log8.txt");
+        Controller controller8 = new Controller(repository8);
+        controller8.addProgram(programState8);
+
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
         menu.addCommand(new RunExampleCommand("1", program1.toString(), controller1));
@@ -260,6 +301,7 @@ public class Interpreter {
         menu.addCommand(new RunExampleCommand("5", program5.toString(), controller5));
         menu.addCommand(new RunExampleCommand("6", program6.toString(), controller6));
         menu.addCommand(new RunExampleCommand("7", program7.toString(), controller7));
+        menu.addCommand(new RunExampleCommand("8", program8.toString(), controller8));
         menu.show();
     }
 }

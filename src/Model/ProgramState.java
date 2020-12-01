@@ -9,6 +9,8 @@ import Model.Statements.IStatement;
 import Model.Values.IValue;
 import Model.Values.StringValue;
 import java.io.BufferedReader;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 
 public class ProgramState{
@@ -19,7 +21,8 @@ public class ProgramState{
     IStatement originalProgram;
     IDictionary<StringValue, BufferedReader> fileTable;
     IHeapTable<Integer, IValue> heapTable;
-    static int programStateId;
+    private final int programStateId;
+    static int lastUsedId = 0;
 
     public IStack<IStatement> getExeStack() {
         return exeStack;
@@ -53,6 +56,12 @@ public class ProgramState{
         this.fileTable = fileTable;
         this.heapTable = heapTable;
         this.exeStack.push(originalProgram);
+
+        Lock lock = new ReentrantLock();
+        lock.lock();
+        this.programStateId = lastUsedId + 1;
+        lastUsedId++;
+        lock.unlock();
     }
 
     public boolean isNotCompleted() {
@@ -68,7 +77,7 @@ public class ProgramState{
 
     public String toString() {
         return  "================== Next step ==================\n" +
-                "Id: " + programStateId +
+                "Id: " + programStateId + "\n\n" +
                 "ExeStack\n" +
                 this.exeStack.toString() + "\n\n" +
                 "Symbol table\n" +

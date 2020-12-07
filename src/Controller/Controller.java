@@ -36,6 +36,7 @@ public class Controller {
     public void allSteps() throws MyException{
         this.executor = Executors.newFixedThreadPool(2);
         List<ProgramState> programStateList = this.removeCompletedPrograms(this.repository.getProgramStateList());
+
         while(programStateList.size() > 0) {
             ProgramState programState = programStateList.get(0);
             programState.getHeapTable().setContent(

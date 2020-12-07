@@ -174,7 +174,7 @@ public class Interpreter {
         IStatement program5 = new CompStatement(
                 new VarDeclarationStatement("v", new ReferenceType(new IntType())),
                 new CompStatement(
-                        new HeapAllocationStatement("v", new ValueExpression(new IntValue(20))),
+                        new NewStatement("v", new ValueExpression(new IntValue(20))),
                         new CompStatement(
                                 new PrintStatement(new HeapReadingExpression(new VarExpression("v"))),
                                 new CompStatement(
@@ -206,11 +206,11 @@ public class Interpreter {
         IStatement program6 = new CompStatement(
                 new VarDeclarationStatement("v", new ReferenceType(new IntType())),
                 new CompStatement(
-                        new HeapAllocationStatement("v", new ValueExpression(new IntValue(20))),
+                        new NewStatement("v", new ValueExpression(new IntValue(20))),
                         new CompStatement(
                                 new VarDeclarationStatement("a", new ReferenceType(new ReferenceType(new IntType()))),
                                 new CompStatement(
-                                        new HeapAllocationStatement("a", new VarExpression("v")),
+                                        new NewStatement("a", new VarExpression("v")),
                                         new CompStatement(
                                             new HeapWritingStatement("v", new ValueExpression(new IntValue(30))),
                                                 new PrintStatement(new HeapReadingExpression(
@@ -266,7 +266,7 @@ public class Interpreter {
                         new CompStatement(
                                 new AssignStatement("v", new ValueExpression(new IntValue(10))),
                                 new CompStatement(
-                                        new HeapAllocationStatement("a", new ValueExpression(new IntValue(22))),
+                                        new NewStatement("a", new ValueExpression(new IntValue(22))),
                                         new CompStatement(
                                                 new ForkStatement(
                                                         new CompStatement(

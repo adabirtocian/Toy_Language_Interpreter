@@ -9,12 +9,12 @@ import Model.Types.ReferenceType;
 import Model.Values.IValue;
 import Model.Values.ReferenceValue;
 
-public class HeapAllocationStatement implements IStatement{
+public class NewStatement implements IStatement{
 
     private String variableName;
     private IExpression expression;
 
-    public HeapAllocationStatement(String variableName, IExpression expression) {
+    public NewStatement(String variableName, IExpression expression) {
         this.variableName = variableName;
         this.expression = expression;
     }
@@ -44,7 +44,7 @@ public class HeapAllocationStatement implements IStatement{
 
     @Override
     public IStatement deepCopy() {
-        return new HeapAllocationStatement(this.variableName, this.expression.deepCopy());
+        return new NewStatement(this.variableName, this.expression.deepCopy());
     }
 
     @Override

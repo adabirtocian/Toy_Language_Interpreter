@@ -1,5 +1,6 @@
 package Model.Statements;
 
+import Model.ADTs.IDictionary;
 import Model.ADTs.IStack;
 import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
@@ -40,6 +41,16 @@ public class WhileStatement implements IStatement {
     @Override
     public IStatement deepCopy() {
         return new WhileStatement(this.expression.deepCopy(), this.statement.deepCopy());
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        IType typeExpression = this.expression.typeCheck(typeEnvironment);
+        if(typeExpression.equals(new BoolType())) {
+            this.statement.typeCheck(typeEnvironment.deepCopy());
+            return typeEnvironment;
+        }
+        else throw new InvalidTypeException("The condition of while is not boolean");
     }
 
     @Override

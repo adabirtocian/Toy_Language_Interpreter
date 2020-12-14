@@ -5,6 +5,7 @@ import Model.ADTs.IHeapTable;
 import Model.Exceptions.InvalidKeyException;
 import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
+import Model.Types.IType;
 import Model.Types.ReferenceType;
 import Model.Values.IValue;
 import Model.Values.ReferenceValue;
@@ -34,6 +35,16 @@ public class HeapReadingExpression implements IExpression {
     @Override
     public IExpression deepCopy() {
         return new HeapReadingExpression(this.expression.deepCopy());
+    }
+
+    @Override
+    public IType typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        IType type = this.expression.typeCheck(typeEnvironment);
+        if(type instanceof ReferenceType) {
+            ReferenceType reference = (ReferenceType) type;
+            return reference.getInner();
+        }
+        else throw new InvalidTypeException("Heap reading: Argument not a reference type");
     }
 
     @Override

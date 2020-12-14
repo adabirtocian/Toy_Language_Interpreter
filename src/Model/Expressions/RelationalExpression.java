@@ -5,6 +5,8 @@ import Model.ADTs.IHeapTable;
 import Model.Exceptions.InvalidOperatorException;
 import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
+import Model.Types.BoolType;
+import Model.Types.IType;
 import Model.Types.IntType;
 import Model.Values.BoolValue;
 import Model.Values.IValue;
@@ -50,6 +52,20 @@ public class RelationalExpression implements IExpression{
     @Override
     public IExpression deepCopy() {
         return new RelationalExpression(this.expression1.deepCopy(), this.expression2.deepCopy(), this.operator);
+    }
+
+    @Override
+    public IType typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        IType type1, type2;
+        type1 = this.expression1.typeCheck(typeEnvironment);
+        type2 = this.expression2.typeCheck(typeEnvironment);
+
+        if(type1.equals(new IntType())) {
+            if(type2.equals(new IntType()))
+                return new BoolType();
+            else throw new InvalidTypeException("Second operator not an integer");
+        }
+        else throw new InvalidTypeException("First operator not an integer");
     }
 
     @Override

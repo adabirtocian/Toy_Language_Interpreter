@@ -1,5 +1,6 @@
 package Model.Statements;
 
+import Model.ADTs.IDictionary;
 import Model.ADTs.IStack;
 import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
@@ -65,6 +66,17 @@ public class IfStatement implements IStatement{
     @Override
     public IStatement deepCopy() {
         return new IfStatement(this.expression.deepCopy(), this.thenStatement.deepCopy(), this.elseStatement.deepCopy());
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        IType typeExpression = this.expression.typeCheck(typeEnvironment);
+        if(typeExpression.equals(new BoolType())) {
+            this.thenStatement.typeCheck(typeEnvironment.deepCopy());
+            this.elseStatement.typeCheck(typeEnvironment.deepCopy());
+            return typeEnvironment;
+        }
+        else throw new InvalidTypeException("The condition of if has not boolean type");
     }
 
     public String toString() {

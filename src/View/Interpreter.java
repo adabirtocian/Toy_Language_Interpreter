@@ -2,12 +2,15 @@ package View;
 
 import Controller.Controller;
 import Model.ADTs.*;
+import Model.Exceptions.MyException;
 import Model.Expressions.*;
 import Model.ProgramState;
 import Model.Statements.*;
+import Model.Types.IType;
 import Model.Types.IntType;
 import Model.Types.ReferenceType;
 import Model.Types.StringType;
+import Model.Values.BoolValue;
 import Model.Values.IValue;
 import Model.Values.IntValue;
 import Model.Values.StringValue;
@@ -287,10 +290,53 @@ public class Interpreter {
                                         )
                                 )
                         )));
+
         ProgramState programState8 = new ProgramState(exeStack8, symbolTable8, out8, program8, fileTable8, heapTable8);
         IRepository repository8 = new Repository("log8.txt");
         Controller controller8 = new Controller(repository8);
         controller8.addProgram(programState8);
+
+        // error in type checker
+        IStack<IStatement> exeStack9 = new MyStack<>();
+        IDictionary<String, IValue> symbolTable9 = new Dictionary<>();
+        IDictionary<StringValue, BufferedReader> fileTable9 = new FileTable<>();
+        IList<IValue> out9 = new List<>();
+        IHeapTable<Integer, IValue> heapTable9 = new HeapTable<>();
+
+        IStatement program9  = new CompStatement(
+                new VarDeclarationStatement("v", new IntType()),
+                new CompStatement(
+                        new VarDeclarationStatement("a", new ReferenceType(new IntType())),
+                        new CompStatement(
+                                new AssignStatement("v", new ValueExpression(new BoolValue(true))),
+                                new CompStatement(
+                                        new NewStatement("a", new ValueExpression(new IntValue(22))),
+                                        new CompStatement(
+                                                new ForkStatement(
+                                                        new CompStatement(
+                                                                new HeapWritingStatement("a", new ValueExpression(new IntValue(30))),
+                                                                new CompStatement(
+                                                                        new AssignStatement("v", new ValueExpression(new IntValue(32))),
+                                                                        new CompStatement(
+                                                                                new PrintStatement(new VarExpression("v")),
+                                                                                new PrintStatement(new HeapReadingExpression(new VarExpression("a")))
+                                                                        )
+                                                                )
+                                                        )
+                                                ),
+                                                new CompStatement(
+                                                        new PrintStatement(new VarExpression("v")),
+                                                        new PrintStatement(new HeapReadingExpression(new VarExpression("a")))
+                                                )
+                                        )
+                                )
+                        )));
+
+        ProgramState programState9 = new ProgramState(exeStack9, symbolTable9, out9, program9, fileTable9, heapTable9);
+        IRepository repository9 = new Repository("log9.txt");
+        Controller controller9 = new Controller(repository9);
+        controller9.addProgram(programState9);
+
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
@@ -302,6 +348,7 @@ public class Interpreter {
         menu.addCommand(new RunExampleCommand("6", program6.toString(), controller6));
         menu.addCommand(new RunExampleCommand("7", program7.toString(), controller7));
         menu.addCommand(new RunExampleCommand("8", program8.toString(), controller8));
+        menu.addCommand(new RunExampleCommand("9", program9.toString(), controller9));
         menu.show();
     }
 }

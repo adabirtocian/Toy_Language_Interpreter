@@ -1,10 +1,12 @@
 package Model.Statements;
 
+import Model.ADTs.IDictionary;
 import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
 import Model.Exceptions.UndeclaredVariableException;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
+import Model.Types.IType;
 import Model.Types.ReferenceType;
 import Model.Values.IValue;
 import Model.Values.ReferenceValue;
@@ -45,6 +47,15 @@ public class NewStatement implements IStatement{
     @Override
     public IStatement deepCopy() {
         return new NewStatement(this.variableName, this.expression.deepCopy());
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        IType typeVar = typeEnvironment.lookup(this.variableName);
+        IType typeExpression = this.expression.typeCheck(typeEnvironment);
+        if(typeVar.equals(new ReferenceType(typeExpression)))
+            return typeEnvironment;
+        else throw new InvalidTypeException("New statement: right hand side and left hand side have different types");
     }
 
     @Override

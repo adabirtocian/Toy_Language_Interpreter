@@ -49,6 +49,12 @@ public class VarDeclarationStatement implements IStatement {
         return new VarDeclarationStatement(this.id, this.type.deepCopy());
     }
 
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        typeEnvironment.add(this.id, this.type);
+        return typeEnvironment;
+    }
+
     public String toString() {
         return this.type + " " + this.id;
     }

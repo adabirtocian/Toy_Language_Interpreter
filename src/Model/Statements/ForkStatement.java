@@ -1,9 +1,11 @@
 package Model.Statements;
 
+import Model.ADTs.IDictionary;
 import Model.ADTs.IStack;
 import Model.ADTs.MyStack;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
+import Model.Types.IType;
 
 public class ForkStatement implements IStatement {
 
@@ -29,5 +31,11 @@ public class ForkStatement implements IStatement {
     @Override
     public IStatement deepCopy() {
         return new ForkStatement(this.statement.deepCopy());
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        this.statement.typeCheck(typeEnvironment.deepCopy());
+        return typeEnvironment;
     }
 }

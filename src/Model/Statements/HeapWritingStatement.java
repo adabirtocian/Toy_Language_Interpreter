@@ -5,6 +5,7 @@ import Model.ADTs.IHeapTable;
 import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
+import Model.Types.IType;
 import Model.Types.ReferenceType;
 import Model.Values.IValue;
 import Model.Values.ReferenceValue;
@@ -47,6 +48,15 @@ public class HeapWritingStatement implements IStatement{
     @Override
     public IStatement deepCopy() {
         return new HeapWritingStatement(this.variableName, this.expression.deepCopy());
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        IType typeVar = typeEnvironment.lookup(this.variableName);
+        IType typeExpression = this.expression.typeCheck(typeEnvironment);
+        if(typeVar.equals(new ReferenceType(typeExpression)))
+            return typeEnvironment;
+        throw new InvalidTypeException("Heap writing: right hand side and left hand side have different types");
     }
 
     @Override

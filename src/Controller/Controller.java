@@ -1,16 +1,18 @@
 package Controller;
 
+import Model.ADTs.IDictionary;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
+import Model.Types.IType;
 import Model.Values.IValue;
 import Model.Values.ReferenceValue;
 import Repository.IRepository;
-
 import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
+import Model.ADTs.Dictionary;
 
 public class Controller {
     private IRepository repository;
@@ -33,7 +35,12 @@ public class Controller {
                 .collect(Collectors.toList());
     }
 
-    public void allSteps() throws MyException{
+    public void allSteps() throws MyException {
+        for(ProgramState state: this.repository.getProgramStateList()) {
+            IDictionary<String, IType> typeEnvironment = new Dictionary<>();
+            state.getExeStack().peek().typeCheck(typeEnvironment);
+        }
+
         this.executor = Executors.newFixedThreadPool(2);
         List<ProgramState> programStateList = this.removeCompletedPrograms(this.repository.getProgramStateList());
 
@@ -77,7 +84,6 @@ public class Controller {
             programStateList.addAll(newProgramStateList);
             programStateList.forEach(program -> this.repository.logProgramStateExecution(program));
             this.repository.setProgramStateList(programStateList);
-
         }
         catch(InterruptedException | MyException exception) {
             System.out.println(exception.getMessage());

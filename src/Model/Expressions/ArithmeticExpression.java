@@ -5,6 +5,7 @@ import Model.ADTs.IHeapTable;
 import Model.Exceptions.DivisionByZeroException;
 import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
+import Model.Types.IType;
 import Model.Types.IntType;
 import Model.Values.IValue;
 import Model.Values.IntValue;
@@ -81,6 +82,20 @@ public class ArithmeticExpression implements IExpression{
         IExpression expression1 = this.expression1.deepCopy();
         IExpression expression2 = this.expression2.deepCopy();
         return new ArithmeticExpression(expression1, expression2, this.operation);
+    }
+
+    @Override
+    public IType typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        IType type1, type2;
+        type1 = this.expression1.typeCheck(typeEnvironment);
+        type2 = this.expression2.typeCheck(typeEnvironment);
+
+        if(type1.equals(new IntType())) {
+            if(type2.equals(new IntType()))
+                return new IntType();
+            else throw new InvalidTypeException("Second operator not an integer");
+        }
+        else throw new InvalidTypeException("First operator not an integer");
     }
 
 }

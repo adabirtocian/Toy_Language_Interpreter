@@ -1,7 +1,9 @@
 package Model.Statements;
 
+import Model.ADTs.IDictionary;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
+import Model.Types.IType;
 
 public class NoOperationStatement implements IStatement {
 
@@ -15,5 +17,10 @@ public class NoOperationStatement implements IStatement {
     @Override
     public IStatement deepCopy() {
         return new NoOperationStatement();
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        return typeEnvironment;
     }
 }

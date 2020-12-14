@@ -40,4 +40,12 @@ public class MyStack<T> implements IStack<T> {
         return stringBuilder.toString();
     }
 
+    @Override
+    public T peek() throws MyException {
+        if(this.myStack.isEmpty()) {
+            throw new EmptyStackException("Empty stack");
+        }
+        return this.myStack.peek();
+    }
+
 }

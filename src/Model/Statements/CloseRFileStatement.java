@@ -5,6 +5,7 @@ import Model.ADTs.IStack;
 import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
+import Model.Types.IType;
 import Model.Types.StringType;
 import Model.Values.IValue;
 import Model.Values.StringValue;
@@ -45,6 +46,13 @@ public class CloseRFileStatement implements IStatement {
     @Override
     public IStatement deepCopy() {
         return new CloseRFileStatement(this.expression.deepCopy());
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        IType typeExpression = this.expression.typeCheck(typeEnvironment);
+        if(typeExpression.equals(new StringType())) return typeEnvironment;
+        else throw new InvalidTypeException("Expression does not have string type");
     }
 
     public String toString() {

@@ -14,6 +14,11 @@ public class RunExampleCommand extends Command {
 
     @Override
     public void execute() {
-        this.controller.allSteps();
+        try {
+            this.controller.allSteps();
+        }
+        catch (MyException exception) {
+            System.out.println(exception.getMessage());
+        }
     }
 }

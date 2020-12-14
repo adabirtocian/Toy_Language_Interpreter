@@ -3,6 +3,7 @@ package Model.Expressions;
 import Model.ADTs.IDictionary;
 import Model.ADTs.IHeapTable;
 import Model.Exceptions.MyException;
+import Model.Types.IType;
 import Model.Values.IValue;
 
 public class VarExpression implements IExpression {
@@ -24,6 +25,11 @@ public class VarExpression implements IExpression {
     @Override
     public IExpression deepCopy() {
         return new VarExpression(this.id);
+    }
+
+    @Override
+    public IType typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        return typeEnvironment.lookup(this.id);
     }
 
 }

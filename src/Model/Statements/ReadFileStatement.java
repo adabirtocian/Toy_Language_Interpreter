@@ -1,10 +1,10 @@
 package Model.Statements;
 
 import Model.ADTs.IDictionary;
-import Model.ADTs.IStack;
 import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
+import Model.Types.IType;
 import Model.Types.IntType;
 import Model.Types.StringType;
 import Model.Values.IValue;
@@ -58,6 +58,18 @@ public class ReadFileStatement implements IStatement{
     @Override
     public IStatement deepCopy() {
         return new ReadFileStatement(this.expression.deepCopy(), this.variableName);
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        IType typeVar = typeEnvironment.lookup(this.variableName);
+        IType typeExpression = this.expression.typeCheck(typeEnvironment);
+        if(typeExpression.equals(new StringType())) {
+            if(typeVar.equals(new IntType()))
+                return typeEnvironment;
+            else throw new InvalidTypeException("Variable requires int type");
+        }
+        else throw new InvalidTypeException("Expression does not have string type");
     }
 
     public String toString(){

@@ -1,8 +1,10 @@
 package Model.Statements;
 
+import Model.ADTs.IDictionary;
 import Model.ADTs.IStack;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
+import Model.Types.IType;
 
 public class CompStatement implements IStatement {
     IStatement firstStatement;
@@ -41,6 +43,11 @@ public class CompStatement implements IStatement {
     @Override
     public IStatement deepCopy() {
         return new CompStatement(this.firstStatement.deepCopy(), this.secondStatement.deepCopy());
+    }
+
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        return this.secondStatement.typeCheck(this.firstStatement.typeCheck(typeEnvironment));
     }
 
     public String toString() {

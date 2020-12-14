@@ -7,4 +7,5 @@ public interface IStack<T> {
     T pop() throws MyException;
     boolean isEmpty();
     String toString();
+    T peek() throws MyException;
 }

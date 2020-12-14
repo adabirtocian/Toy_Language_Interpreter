@@ -58,6 +58,15 @@ public class AssignStatement implements IStatement {
         return new AssignStatement(this.id, this.expression.deepCopy());
     }
 
+    @Override
+    public IDictionary<String, IType> typeCheck(IDictionary<String, IType> typeEnvironment) throws MyException {
+        IType typeVar = typeEnvironment.lookup(this.id);
+        IType typeExpression = this.expression.typeCheck(typeEnvironment);
+        if(typeVar.equals(typeExpression))
+            return typeEnvironment;
+        else throw new InvalidTypeException("Assignment statement: right hand side and left hand side have different types");
+    }
+
     public String toString() {
         return this.id + "=" + this.expression.toString();
     }

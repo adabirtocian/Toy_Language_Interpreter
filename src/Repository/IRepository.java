@@ -11,4 +11,5 @@ public interface IRepository {
     void logProgramStateExecution(ProgramState state) throws MyException;
     List<ProgramState> getProgramStateList();
     void setProgramStateList(List<ProgramState> newProgramStateList);
+    void clearLogFile() throws MyException;
 }

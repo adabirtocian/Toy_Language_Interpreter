@@ -40,7 +40,6 @@ public class Controller {
             IDictionary<String, IType> typeEnvironment = new Dictionary<>();
             state.getExeStack().peek().typeCheck(typeEnvironment);
         }
-
         this.executor = Executors.newFixedThreadPool(2);
         List<ProgramState> programStateList = this.removeCompletedPrograms(this.repository.getProgramStateList());
 

@@ -3,10 +3,8 @@ package Repository;
 import Model.Exceptions.MyException;
 import Model.Exceptions.LogProgramStateException;
 import Model.ProgramState;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,5 +42,15 @@ public class Repository implements IRepository{
     @Override
     public void setProgramStateList(List<ProgramState> newProgramStateList) {
         this.myProgramStates = newProgramStateList;
+    }
+
+    @Override
+    public void clearLogFile() throws MyException {
+        try{
+            PrintWriter logFile = new PrintWriter(this.filePath);
+            logFile.close();
+        } catch (IOException exception) {
+            throw new LogProgramStateException("ClearLogFile: Log file could not be closed");
+        }
     }
 }

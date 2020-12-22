@@ -46,6 +46,8 @@ public class ProgramState{
         return this.heapTable;
     }
 
+    public int getId() {return this.programStateId; }
+
     public ProgramState(IStack<IStatement> exeStack, IDictionary<String, IValue> symbolTabel, IList<IValue> out,
                         IStatement originalProgram, IDictionary<StringValue, BufferedReader> fileTable,
                         IHeapTable<Integer, IValue> heapTable) {

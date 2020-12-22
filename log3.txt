@@ -193,3 +193,1659 @@ Symbol table
 Output
 [a greater than 10,]
 
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int a; (int b; (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int a || (int b; (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int a || (int b; (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int b; (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))))) || 
+
+Symbol table
+{a=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int b; (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))))) || 
+
+Symbol table
+{a=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int b || (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))))) || 
+
+Symbol table
+{a=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int b || (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))))) || 
+
+Symbol table
+{a=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))))) || 
+
+Symbol table
+{a=0, b=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))))) || 
+
+Symbol table
+{a=0, b=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+string file || (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))) || 
+
+Symbol table
+{a=0, b=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+string file || (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))) || 
+
+Symbol table
+{a=0, b=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))) || 
+
+Symbol table
+{a=0, b=0, file=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))) || 
+
+Symbol table
+{a=0, b=0, file=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+file=test.txt || (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))) || 
+
+Symbol table
+{a=0, b=0, file=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+file=test.txt || (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))) || 
+
+Symbol table
+{a=0, b=0, file=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+openfile(file) || (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+openfile(file) || (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(file,a) || (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(file,a) || (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(file,b) || (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(file,b) || (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+a=a*2 || (b=1+a; (print(a); (print(b); closefile(file)))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+a=a*2 || (b=1+a; (print(a); (print(b); closefile(file)))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(b=1+a; (print(a); (print(b); closefile(file)))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(b=1+a; (print(a); (print(b); closefile(file)))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+b=1+a || (print(a); (print(b); closefile(file))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+b=1+a || (print(a); (print(b); closefile(file))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(a); (print(b); closefile(file))) || 
+
+Symbol table
+{a=0, b=1, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(a); (print(b); closefile(file))) || 
+
+Symbol table
+{a=0, b=1, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(a) || (print(b); closefile(file)) || 
+
+Symbol table
+{a=0, b=1, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(a) || (print(b); closefile(file)) || 
+
+Symbol table
+{a=0, b=1, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(b); closefile(file)) || 
+
+Symbol table
+{a=0, b=1, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(b); closefile(file)) || 
+
+Symbol table
+{a=0, b=1, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(b) || closefile(file) || 
+
+Symbol table
+{a=0, b=1, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(b) || closefile(file) || 
+
+Symbol table
+{a=0, b=1, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+closefile(file) || 
+
+Symbol table
+{a=0, b=1, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0, 1]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+closefile(file) || 
+
+Symbol table
+{a=0, b=1, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0, 1]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+
+
+Symbol table
+{a=0, b=1, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0, 1]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int a; (int b; (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int a || (int b; (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int a || (int b; (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int b; (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))))) || 
+
+Symbol table
+{a=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int b; (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))))) || 
+
+Symbol table
+{a=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int b || (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))))) || 
+
+Symbol table
+{a=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int b || (string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))))) || 
+
+Symbol table
+{a=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))))) || 
+
+Symbol table
+{a=0, b=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(string file; (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))))) || 
+
+Symbol table
+{a=0, b=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+string file || (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))) || 
+
+Symbol table
+{a=0, b=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+string file || (file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))) || 
+
+Symbol table
+{a=0, b=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))) || 
+
+Symbol table
+{a=0, b=0, file=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(file=test.txt; (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))))) || 
+
+Symbol table
+{a=0, b=0, file=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+file=test.txt || (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))) || 
+
+Symbol table
+{a=0, b=0, file=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+file=test.txt || (openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))) || 
+
+Symbol table
+{a=0, b=0, file=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(openfile(file); (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+openfile(file) || (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+openfile(file) || (readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(file,a); (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(file,a) || (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(file,a) || (readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))) || 
+
+Symbol table
+{a=0, b=0, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))) || 
+
+Symbol table
+{a=14, b=0, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(file,b); (a=a*2; (b=1+a; (print(a); (print(b); closefile(file)))))) || 
+
+Symbol table
+{a=14, b=0, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(file,b) || (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))) || 
+
+Symbol table
+{a=14, b=0, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(file,b) || (a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))) || 
+
+Symbol table
+{a=14, b=0, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))) || 
+
+Symbol table
+{a=14, b=3, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(a=a*2; (b=1+a; (print(a); (print(b); closefile(file))))) || 
+
+Symbol table
+{a=14, b=3, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+a=a*2 || (b=1+a; (print(a); (print(b); closefile(file)))) || 
+
+Symbol table
+{a=14, b=3, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+a=a*2 || (b=1+a; (print(a); (print(b); closefile(file)))) || 
+
+Symbol table
+{a=14, b=3, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(b=1+a; (print(a); (print(b); closefile(file)))) || 
+
+Symbol table
+{a=28, b=3, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(b=1+a; (print(a); (print(b); closefile(file)))) || 
+
+Symbol table
+{a=28, b=3, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+b=1+a || (print(a); (print(b); closefile(file))) || 
+
+Symbol table
+{a=28, b=3, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+b=1+a || (print(a); (print(b); closefile(file))) || 
+
+Symbol table
+{a=28, b=3, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(a); (print(b); closefile(file))) || 
+
+Symbol table
+{a=28, b=29, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(a); (print(b); closefile(file))) || 
+
+Symbol table
+{a=28, b=29, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(a) || (print(b); closefile(file)) || 
+
+Symbol table
+{a=28, b=29, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(a) || (print(b); closefile(file)) || 
+
+Symbol table
+{a=28, b=29, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(b); closefile(file)) || 
+
+Symbol table
+{a=28, b=29, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[28]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(b); closefile(file)) || 
+
+Symbol table
+{a=28, b=29, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[28]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(b) || closefile(file) || 
+
+Symbol table
+{a=28, b=29, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[28]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(b) || closefile(file) || 
+
+Symbol table
+{a=28, b=29, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[28]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+closefile(file) || 
+
+Symbol table
+{a=28, b=29, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[28, 29]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+closefile(file) || 
+
+Symbol table
+{a=28, b=29, file=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@1d738ee5}
+
+HeapTable
+{}
+
+Output
+[28, 29]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+
+
+Symbol table
+{a=28, b=29, file=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[28, 29]
+

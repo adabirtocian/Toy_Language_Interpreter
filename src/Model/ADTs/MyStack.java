@@ -48,4 +48,9 @@ public class MyStack<T> implements IStack<T> {
         return this.myStack.peek();
     }
 
+    @Override
+    public Stack<T> getContent() {
+        return this.myStack;
+    }
+
 }

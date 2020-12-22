@@ -1,5 +1,5 @@
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 (int v; (ref(int) a; (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))))))) || 
@@ -8,7 +8,7 @@ Symbol table
 {}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -17,7 +17,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 int v || (ref(int) a; (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))))) || 
@@ -26,7 +26,7 @@ Symbol table
 {}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -35,7 +35,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 int v || (ref(int) a; (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))))) || 
@@ -44,7 +44,7 @@ Symbol table
 {}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -53,7 +53,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 (ref(int) a; (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))))) || 
@@ -62,7 +62,7 @@ Symbol table
 {v=0}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -71,7 +71,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 (ref(int) a; (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))))) || 
@@ -80,7 +80,7 @@ Symbol table
 {v=0}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -89,7 +89,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 ref(int) a || (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))))) || 
@@ -98,7 +98,7 @@ Symbol table
 {v=0}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -107,7 +107,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 ref(int) a || (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))))) || 
@@ -116,7 +116,7 @@ Symbol table
 {v=0}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -125,7 +125,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))))) || 
@@ -134,7 +134,7 @@ Symbol table
 {a=(0,int), v=0}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -143,7 +143,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))))) || 
@@ -152,7 +152,7 @@ Symbol table
 {a=(0,int), v=0}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -161,7 +161,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 v=10 || (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))) || 
@@ -170,7 +170,7 @@ Symbol table
 {a=(0,int), v=0}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -179,7 +179,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 v=10 || (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))) || 
@@ -188,7 +188,7 @@ Symbol table
 {a=(0,int), v=0}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -197,7 +197,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))) || 
@@ -206,7 +206,7 @@ Symbol table
 {a=(0,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -215,7 +215,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))) || 
@@ -224,7 +224,7 @@ Symbol table
 {a=(0,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -233,7 +233,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 new(a, 22) || (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))) || 
@@ -242,7 +242,7 @@ Symbol table
 {a=(0,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -251,7 +251,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 new(a, 22) || (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))) || 
@@ -260,7 +260,7 @@ Symbol table
 {a=(0,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {}
@@ -269,7 +269,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))) || 
@@ -278,7 +278,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=22}
@@ -287,7 +287,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))) || 
@@ -296,7 +296,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=22}
@@ -305,7 +305,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ) || (print(v); print(readHeap(a))) || 
@@ -314,7 +314,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=22}
@@ -323,7 +323,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ) || (print(v); print(readHeap(a))) || 
@@ -332,7 +332,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=22}
@@ -341,7 +341,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 (print(v); print(readHeap(a))) || 
@@ -350,7 +350,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=22}
@@ -359,7 +359,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) || 
@@ -368,7 +368,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=22}
@@ -377,7 +377,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 (print(v); print(readHeap(a))) || 
@@ -386,7 +386,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=22}
@@ -395,7 +395,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) || 
@@ -404,7 +404,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=22}
@@ -413,7 +413,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 print(v) || print(readHeap(a)) || 
@@ -422,7 +422,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=22}
@@ -431,7 +431,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 writeHeap(a,30) || (v=32; (print(v); print(readHeap(a)))) || 
@@ -440,7 +440,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=22}
@@ -449,7 +449,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 print(v) || print(readHeap(a)) || 
@@ -458,7 +458,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=22}
@@ -467,7 +467,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 writeHeap(a,30) || (v=32; (print(v); print(readHeap(a)))) || 
@@ -476,7 +476,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=22}
@@ -485,7 +485,7 @@ Output
 []
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 print(readHeap(a)) || 
@@ -494,7 +494,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -503,7 +503,7 @@ Output
 [10]
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 (v=32; (print(v); print(readHeap(a)))) || 
@@ -512,7 +512,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -521,7 +521,7 @@ Output
 [10]
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 print(readHeap(a)) || 
@@ -530,7 +530,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -539,7 +539,7 @@ Output
 [10]
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 (v=32; (print(v); print(readHeap(a)))) || 
@@ -548,7 +548,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -557,7 +557,7 @@ Output
 [10]
 
 ================== Next step ==================
-Id: 8
+Id: 1
 
 ExeStack
 
@@ -566,7 +566,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -575,7 +575,7 @@ Output
 [10, 30]
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 v=32 || (print(v); print(readHeap(a))) || 
@@ -584,7 +584,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -593,7 +593,7 @@ Output
 [10, 30]
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 v=32 || (print(v); print(readHeap(a))) || 
@@ -602,7 +602,7 @@ Symbol table
 {a=(1,int), v=10}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -611,7 +611,7 @@ Output
 [10, 30]
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 (print(v); print(readHeap(a))) || 
@@ -620,7 +620,7 @@ Symbol table
 {a=(1,int), v=32}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -629,7 +629,7 @@ Output
 [10, 30]
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 (print(v); print(readHeap(a))) || 
@@ -638,7 +638,7 @@ Symbol table
 {a=(1,int), v=32}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -647,7 +647,7 @@ Output
 [10, 30]
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 print(v) || print(readHeap(a)) || 
@@ -656,7 +656,7 @@ Symbol table
 {a=(1,int), v=32}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -665,7 +665,7 @@ Output
 [10, 30]
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 print(v) || print(readHeap(a)) || 
@@ -674,7 +674,7 @@ Symbol table
 {a=(1,int), v=32}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -683,7 +683,7 @@ Output
 [10, 30]
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 print(readHeap(a)) || 
@@ -692,7 +692,7 @@ Symbol table
 {a=(1,int), v=32}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -701,7 +701,7 @@ Output
 [10, 30, 32]
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 print(readHeap(a)) || 
@@ -710,7 +710,7 @@ Symbol table
 {a=(1,int), v=32}
 
 FileTable
-[]
+{}
 
 HeapTable
 {1=30}
@@ -719,7 +719,7 @@ Output
 [10, 30, 32]
 
 ================== Next step ==================
-Id: 9
+Id: 2
 
 ExeStack
 
@@ -728,745 +728,7 @@ Symbol table
 {a=(1,int), v=32}
 
 FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10, 30, 32, 30]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-(int v; (ref(int) a; (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))))))) || 
-
-Symbol table
 {}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-int v || (ref(int) a; (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))))) || 
-
-Symbol table
-{}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-int v || (ref(int) a; (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))))) || 
-
-Symbol table
-{}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-(ref(int) a; (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))))) || 
-
-Symbol table
-{v=0}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-(ref(int) a; (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))))) || 
-
-Symbol table
-{v=0}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-ref(int) a || (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))))) || 
-
-Symbol table
-{v=0}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-ref(int) a || (v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))))) || 
-
-Symbol table
-{v=0}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-(v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))))) || 
-
-Symbol table
-{a=(0,int), v=0}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-(v=10; (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))))) || 
-
-Symbol table
-{a=(0,int), v=0}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-v=10 || (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))) || 
-
-Symbol table
-{a=(0,int), v=0}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-v=10 || (new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))) || 
-
-Symbol table
-{a=(0,int), v=0}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-(new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))) || 
-
-Symbol table
-{a=(0,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-(new(a, 22); (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a))))) || 
-
-Symbol table
-{a=(0,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-new(a, 22) || (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))) || 
-
-Symbol table
-{a=(0,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-new(a, 22) || (fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))) || 
-
-Symbol table
-{a=(0,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-(fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=22}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-(fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ); (print(v); print(readHeap(a)))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=22}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ) || (print(v); print(readHeap(a))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=22}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-fork( (writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) ) || (print(v); print(readHeap(a))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=22}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-(print(v); print(readHeap(a))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=22}
-
-Output
-[]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-(writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=22}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-(print(v); print(readHeap(a))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=22}
-
-Output
-[]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-(writeHeap(a,30); (v=32; (print(v); print(readHeap(a))))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=22}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-print(v) || print(readHeap(a)) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=22}
-
-Output
-[]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-writeHeap(a,30) || (v=32; (print(v); print(readHeap(a)))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=22}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-print(v) || print(readHeap(a)) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=22}
-
-Output
-[]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-writeHeap(a,30) || (v=32; (print(v); print(readHeap(a)))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=22}
-
-Output
-[]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-print(readHeap(a)) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-(v=32; (print(v); print(readHeap(a)))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-print(readHeap(a)) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-(v=32; (print(v); print(readHeap(a)))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10]
-
-================== Next step ==================
-Id: 8
-
-ExeStack
-
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10, 30]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-v=32 || (print(v); print(readHeap(a))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10, 30]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-v=32 || (print(v); print(readHeap(a))) || 
-
-Symbol table
-{a=(1,int), v=10}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10, 30]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-(print(v); print(readHeap(a))) || 
-
-Symbol table
-{a=(1,int), v=32}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10, 30]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-(print(v); print(readHeap(a))) || 
-
-Symbol table
-{a=(1,int), v=32}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10, 30]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-print(v) || print(readHeap(a)) || 
-
-Symbol table
-{a=(1,int), v=32}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10, 30]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-print(v) || print(readHeap(a)) || 
-
-Symbol table
-{a=(1,int), v=32}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10, 30]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-print(readHeap(a)) || 
-
-Symbol table
-{a=(1,int), v=32}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10, 30, 32]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-print(readHeap(a)) || 
-
-Symbol table
-{a=(1,int), v=32}
-
-FileTable
-[]
-
-HeapTable
-{1=30}
-
-Output
-[10, 30, 32]
-
-================== Next step ==================
-Id: 10
-
-ExeStack
-
-
-Symbol table
-{a=(1,int), v=32}
-
-FileTable
-[]
 
 HeapTable
 {1=30}

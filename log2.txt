@@ -1,0 +1,720 @@
+================== Next step ==================
+Id: 1
+
+ExeStack
+(string varf; (varf=test.txt; (openfile(varf); (int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+string varf || (varf=test.txt; (openfile(varf); (int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+string varf || (varf=test.txt; (openfile(varf); (int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(varf=test.txt; (openfile(varf); (int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))))))))) || 
+
+Symbol table
+{varf=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(varf=test.txt; (openfile(varf); (int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))))))))) || 
+
+Symbol table
+{varf=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+varf=test.txt || (openfile(varf); (int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))))))) || 
+
+Symbol table
+{varf=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+varf=test.txt || (openfile(varf); (int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))))))) || 
+
+Symbol table
+{varf=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(openfile(varf); (int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(openfile(varf); (int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+openfile(varf) || (int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+openfile(varf) || (int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int varc; (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int varc || (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int varc || (int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))))) || 
+
+Symbol table
+{varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int a; (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))))) || 
+
+Symbol table
+{varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int a || (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))))) || 
+
+Symbol table
+{varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int a || (readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))))) || 
+
+Symbol table
+{varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))))) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(varf,varc); (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))))) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(varf,varc) || (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(varf,varc) || (print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(varc); (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)))) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(varc) || (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(varc) || (readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(varf,a); (if (a>varc) then (print(a)) else (print(varc)); closefile(varf))) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(varf,a) || (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(varf,a) || (if (a>varc) then (print(a)) else (print(varc)); closefile(varf)) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(if (a>varc) then (print(a)) else (print(varc)); closefile(varf)) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(if (a>varc) then (print(a)) else (print(varc)); closefile(varf)) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+if (a>varc) then (print(a)) else (print(varc)) || closefile(varf) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+if (a>varc) then (print(a)) else (print(varc)) || closefile(varf) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(varc) || closefile(varf) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(varc) || closefile(varf) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+closefile(varf) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0, 0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+closefile(varf) || 
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0, 0]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+
+
+Symbol table
+{a=0, varf=test.txt, varc=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[0, 0]
+

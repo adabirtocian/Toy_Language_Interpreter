@@ -1,6 +1,5 @@
 ================== Next step ==================
-FileTable
-[]
+Id: 1
 
 ExeStack
 (ref(int) v; (new(v, 20); (ref(ref(int)) a; (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a)))))))) || 
@@ -8,15 +7,17 @@ ExeStack
 Symbol table
 {}
 
-Output
-[]
+FileTable
+{}
 
 HeapTable
 {}
 
-================== Next step ==================
-FileTable
+Output
 []
+
+================== Next step ==================
+Id: 1
 
 ExeStack
 ref(int) v || (new(v, 20); (ref(ref(int)) a; (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a))))))) || 
@@ -24,15 +25,35 @@ ref(int) v || (new(v, 20); (ref(ref(int)) a; (new(a, v); (writeHeap(v,30); print
 Symbol table
 {}
 
-Output
-[]
+FileTable
+{}
 
 HeapTable
 {}
 
-================== Next step ==================
-FileTable
+Output
 []
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+ref(int) v || (new(v, 20); (ref(ref(int)) a; (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
 
 ExeStack
 (new(v, 20); (ref(ref(int)) a; (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a))))))) || 
@@ -40,15 +61,35 @@ ExeStack
 Symbol table
 {v=(0,int)}
 
-Output
-[]
+FileTable
+{}
 
 HeapTable
 {}
 
-================== Next step ==================
-FileTable
+Output
 []
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(new(v, 20); (ref(ref(int)) a; (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a))))))) || 
+
+Symbol table
+{v=(0,int)}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
 
 ExeStack
 new(v, 20) || (ref(ref(int)) a; (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a)))))) || 
@@ -56,15 +97,35 @@ new(v, 20) || (ref(ref(int)) a; (new(a, v); (writeHeap(v,30); print(readHeap(rea
 Symbol table
 {v=(0,int)}
 
-Output
-[]
+FileTable
+{}
 
 HeapTable
 {}
 
-================== Next step ==================
-FileTable
+Output
 []
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+new(v, 20) || (ref(ref(int)) a; (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a)))))) || 
+
+Symbol table
+{v=(0,int)}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
 
 ExeStack
 (ref(ref(int)) a; (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a)))))) || 
@@ -72,15 +133,35 @@ ExeStack
 Symbol table
 {v=(1,int)}
 
-Output
-[]
+FileTable
+{}
 
 HeapTable
 {1=20}
 
-================== Next step ==================
-FileTable
+Output
 []
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(ref(ref(int)) a; (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a)))))) || 
+
+Symbol table
+{v=(1,int)}
+
+FileTable
+{}
+
+HeapTable
+{1=20}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
 
 ExeStack
 ref(ref(int)) a || (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a))))) || 
@@ -88,15 +169,35 @@ ref(ref(int)) a || (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a))))) 
 Symbol table
 {v=(1,int)}
 
-Output
-[]
+FileTable
+{}
 
 HeapTable
 {1=20}
 
-================== Next step ==================
-FileTable
+Output
 []
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+ref(ref(int)) a || (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a))))) || 
+
+Symbol table
+{v=(1,int)}
+
+FileTable
+{}
+
+HeapTable
+{1=20}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
 
 ExeStack
 (new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a))))) || 
@@ -104,15 +205,35 @@ ExeStack
 Symbol table
 {a=(0,ref(int)), v=(1,int)}
 
-Output
-[]
+FileTable
+{}
 
 HeapTable
 {1=20}
 
-================== Next step ==================
-FileTable
+Output
 []
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(new(a, v); (writeHeap(v,30); print(readHeap(readHeap(a))))) || 
+
+Symbol table
+{a=(0,ref(int)), v=(1,int)}
+
+FileTable
+{}
+
+HeapTable
+{1=20}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
 
 ExeStack
 new(a, v) || (writeHeap(v,30); print(readHeap(readHeap(a)))) || 
@@ -120,15 +241,35 @@ new(a, v) || (writeHeap(v,30); print(readHeap(readHeap(a)))) ||
 Symbol table
 {a=(0,ref(int)), v=(1,int)}
 
-Output
-[]
+FileTable
+{}
 
 HeapTable
 {1=20}
 
-================== Next step ==================
-FileTable
+Output
 []
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+new(a, v) || (writeHeap(v,30); print(readHeap(readHeap(a)))) || 
+
+Symbol table
+{a=(0,ref(int)), v=(1,int)}
+
+FileTable
+{}
+
+HeapTable
+{1=20}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
 
 ExeStack
 (writeHeap(v,30); print(readHeap(readHeap(a)))) || 
@@ -136,57 +277,12 @@ ExeStack
 Symbol table
 {a=(2,ref(int)), v=(1,int)}
 
-Output
-[]
+FileTable
+{}
 
 HeapTable
 {1=20, 2=(1,int)}
 
-================== Next step ==================
-FileTable
-[]
-
-ExeStack
-writeHeap(v,30) || print(readHeap(readHeap(a))) || 
-
-Symbol table
-{a=(2,ref(int)), v=(1,int)}
-
 Output
 []
-
-HeapTable
-{1=20, 2=(1,int)}
-
-================== Next step ==================
-FileTable
-[]
-
-ExeStack
-print(readHeap(readHeap(a))) || 
-
-Symbol table
-{a=(2,ref(int)), v=(1,int)}
-
-Output
-[]
-
-HeapTable
-{1=30, 2=(1,int)}
-
-================== Next step ==================
-FileTable
-[]
-
-ExeStack
-
-
-Symbol table
-{a=(2,ref(int)), v=(1,int)}
-
-Output
-[30]
-
-HeapTable
-{1=30, 2=(1,int)}
 

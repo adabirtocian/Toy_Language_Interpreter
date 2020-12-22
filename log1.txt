@@ -1,0 +1,612 @@
+================== Next step ==================
+Id: 1
+
+ExeStack
+(string varf; (varf=test.txt; (openfile(varf); (int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf))))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+string varf || (varf=test.txt; (openfile(varf); (int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf)))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+string varf || (varf=test.txt; (openfile(varf); (int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf)))))))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(varf=test.txt; (openfile(varf); (int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf)))))))) || 
+
+Symbol table
+{varf=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(varf=test.txt; (openfile(varf); (int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf)))))))) || 
+
+Symbol table
+{varf=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+varf=test.txt || (openfile(varf); (int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf))))))) || 
+
+Symbol table
+{varf=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+varf=test.txt || (openfile(varf); (int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf))))))) || 
+
+Symbol table
+{varf=}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(openfile(varf); (int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf))))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(openfile(varf); (int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf))))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+openfile(varf) || (int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf)))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+openfile(varf) || (int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf)))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf)))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int varc; (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf)))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int varc || (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int varc || (readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf))))) || 
+
+Symbol table
+{varf=test.txt}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf))))) || 
+
+Symbol table
+{varf=test.txt, varc=0}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(varf,varc); (print(varc); (readfile(varf,varc); (print(varc); closefile(varf))))) || 
+
+Symbol table
+{varf=test.txt, varc=0}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(varf,varc) || (print(varc); (readfile(varf,varc); (print(varc); closefile(varf)))) || 
+
+Symbol table
+{varf=test.txt, varc=0}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(varf,varc) || (print(varc); (readfile(varf,varc); (print(varc); closefile(varf)))) || 
+
+Symbol table
+{varf=test.txt, varc=0}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(varc); (readfile(varf,varc); (print(varc); closefile(varf)))) || 
+
+Symbol table
+{varf=test.txt, varc=14}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(varc); (readfile(varf,varc); (print(varc); closefile(varf)))) || 
+
+Symbol table
+{varf=test.txt, varc=14}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(varc) || (readfile(varf,varc); (print(varc); closefile(varf))) || 
+
+Symbol table
+{varf=test.txt, varc=14}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(varc) || (readfile(varf,varc); (print(varc); closefile(varf))) || 
+
+Symbol table
+{varf=test.txt, varc=14}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(varf,varc); (print(varc); closefile(varf))) || 
+
+Symbol table
+{varf=test.txt, varc=14}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[14]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(readfile(varf,varc); (print(varc); closefile(varf))) || 
+
+Symbol table
+{varf=test.txt, varc=14}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[14]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(varf,varc) || (print(varc); closefile(varf)) || 
+
+Symbol table
+{varf=test.txt, varc=14}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[14]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+readfile(varf,varc) || (print(varc); closefile(varf)) || 
+
+Symbol table
+{varf=test.txt, varc=14}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[14]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(varc); closefile(varf)) || 
+
+Symbol table
+{varf=test.txt, varc=3}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[14]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(varc); closefile(varf)) || 
+
+Symbol table
+{varf=test.txt, varc=3}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[14]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(varc) || closefile(varf) || 
+
+Symbol table
+{varf=test.txt, varc=3}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[14]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(varc) || closefile(varf) || 
+
+Symbol table
+{varf=test.txt, varc=3}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[14]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+closefile(varf) || 
+
+Symbol table
+{varf=test.txt, varc=3}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[14, 3]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+closefile(varf) || 
+
+Symbol table
+{varf=test.txt, varc=3}
+
+FileTable
+{test.txt=java.io.BufferedReader@2d43c40}
+
+HeapTable
+{}
+
+Output
+[14, 3]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+
+
+Symbol table
+{varf=test.txt, varc=3}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[14, 3]
+

@@ -38,7 +38,7 @@ public class OpenRFileStatement  implements IStatement{
             fileTable.add((StringValue) expressionValue, reader);
 
         } catch (IOException exception) {
-            throw new OpenFileException("OpenFile: File" + filePath + " not found");
+            throw new OpenFileException("OpenFile: File " + filePath + " not found");
         }
         return null;
     }

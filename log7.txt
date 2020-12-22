@@ -1,0 +1,828 @@
+================== Next step ==================
+Id: 1
+
+ExeStack
+(int v; (v=4; (while( v>0 ) {(print(v); v=v-1)}; print(v)))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int v || (v=4; (while( v>0 ) {(print(v); v=v-1)}; print(v))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+int v || (v=4; (while( v>0 ) {(print(v); v=v-1)}; print(v))) || 
+
+Symbol table
+{}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(v=4; (while( v>0 ) {(print(v); v=v-1)}; print(v))) || 
+
+Symbol table
+{v=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(v=4; (while( v>0 ) {(print(v); v=v-1)}; print(v))) || 
+
+Symbol table
+{v=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+v=4 || (while( v>0 ) {(print(v); v=v-1)}; print(v)) || 
+
+Symbol table
+{v=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+v=4 || (while( v>0 ) {(print(v); v=v-1)}; print(v)) || 
+
+Symbol table
+{v=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(while( v>0 ) {(print(v); v=v-1)}; print(v)) || 
+
+Symbol table
+{v=4}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(while( v>0 ) {(print(v); v=v-1)}; print(v)) || 
+
+Symbol table
+{v=4}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=4}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=4}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(v); v=v-1) || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=4}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(v); v=v-1) || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=4}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(v) || v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=4}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(v) || v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=4}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=4}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=4}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=3}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=3}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(v); v=v-1) || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=3}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(v); v=v-1) || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=3}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(v) || v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=3}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(v) || v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=3}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=3}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=3}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=2}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=2}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(v); v=v-1) || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=2}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(v); v=v-1) || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=2}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(v) || v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=2}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(v) || v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=2}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=2}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=2}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=1}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=1}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(v); v=v-1) || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=1}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+(print(v); v=v-1) || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=1}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(v) || v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=1}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(v) || v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=1}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=1}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2, 1]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+v=v-1 || while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=1}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2, 1]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2, 1]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+while( v>0 ) {(print(v); v=v-1)} || print(v) || 
+
+Symbol table
+{v=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2, 1]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(v) || 
+
+Symbol table
+{v=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2, 1]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(v) || 
+
+Symbol table
+{v=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2, 1]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+
+
+Symbol table
+{v=0}
+
+FileTable
+{}
+
+HeapTable
+{}
+
+Output
+[4, 3, 2, 1, 0]
+

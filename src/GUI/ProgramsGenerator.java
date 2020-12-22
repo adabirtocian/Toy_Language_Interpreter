@@ -19,6 +19,8 @@ public class ProgramsGenerator {
     private ArrayList<IStatement> programs;
 
     public ProgramsGenerator() {
+        this.programs= new ArrayList<>();
+
         // string varf; varf = "test.txt"; open(varf); int varc; readRFile(varf, varc); print(varc); readRFile(varf, varc); print(varc); close(varf)
         IStatement program1 = new CompStatement(
                                  new VarDeclarationStatement("varf", new StringType()),

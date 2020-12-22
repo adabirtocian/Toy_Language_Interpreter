@@ -1,6 +1,7 @@
 package Controller;
 
 import Model.ADTs.IDictionary;
+import Model.Exceptions.EmptyListException;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
 import Model.Types.IType;
@@ -12,21 +13,22 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
-import Model.ADTs.Dictionary;
 
 public class Controller {
     private IRepository repository;
-    private StringBuilder stringAllSteps;
     private ExecutorService executor;
 
 
     public Controller(IRepository repository) {
         this.repository = repository;
-        this.stringAllSteps = new StringBuilder();
     }
 
     public void addProgram(ProgramState programState) {
         this.repository.addProgramState(programState);
+    }
+
+    public IRepository getRepository() {
+        return this.repository;
     }
 
     public List<ProgramState> removeCompletedPrograms(List<ProgramState> programStateList) {
@@ -36,10 +38,7 @@ public class Controller {
     }
 
     public void allSteps() throws MyException {
-        for(ProgramState state: this.repository.getProgramStateList()) {
-            IDictionary<String, IType> typeEnvironment = new Dictionary<>();
-            state.getExeStack().peek().typeCheck(typeEnvironment);
-        }
+        this.typeCheck();
         this.executor = Executors.newFixedThreadPool(2);
         List<ProgramState> programStateList = this.removeCompletedPrograms(this.repository.getProgramStateList());
 
@@ -109,5 +108,42 @@ public class Controller {
                 .filter(variable -> variable instanceof ReferenceValue)
                 .map(variable -> ((ReferenceValue) variable).getHeapAddress())
                 .collect(Collectors.toList());
+    }
+
+    public void typeCheck() throws  MyException {
+        for(ProgramState state: this.repository.getProgramStateList()) {
+            IDictionary<String, IType> typeEnvironment = new Model.ADTs.Dictionary<>();
+            state.getExeStack().peek().typeCheck(typeEnvironment);
+        }
+    }
+
+    public void runOneStep() throws MyException {
+        List<ProgramState> programStateList = this.removeCompletedPrograms(this.repository.getProgramStateList());
+
+        if (programStateList.size() > 0) {
+            this.repository.getProgramStateList().forEach(currentProgram -> currentProgram.getHeapTable().setContent(
+                    this.garbageCollector(
+                            this.getAllSymbolTabelAddresses(programStateList.stream().map(program -> program.getSymbolTabel().getContent().values()).collect(Collectors.toList())),
+                            this.getAllHeapTabelAddresses(currentProgram.getHeapTable().getContent().values()),
+                            currentProgram.getHeapTable().getContent()
+                    )
+            ));
+            this.oneStepForAllPrograms(programStateList);
+        }
+        else {
+            this.executor.shutdownNow();
+            throw new EmptyListException("Program finished");
+        }
+        this.repository.setProgramStateList(programStateList);
+    }
+
+    public void createThreadPool() {
+        try {
+            this.repository.clearLogFile();
+        }
+        catch (MyException exception) {
+            exception.printStackTrace();
+        }
+        this.executor = Executors.newFixedThreadPool(2);
     }
 }

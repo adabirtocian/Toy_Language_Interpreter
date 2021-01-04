@@ -286,3 +286,111 @@ HeapTable
 Output
 []
 
+================== Next step ==================
+Id: 1
+
+ExeStack
+(writeHeap(v,30); print(readHeap(readHeap(a)))) || 
+
+Symbol table
+{a=(2,ref(int)), v=(1,int)}
+
+FileTable
+{}
+
+HeapTable
+{1=20, 2=(1,int)}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+writeHeap(v,30) || print(readHeap(readHeap(a))) || 
+
+Symbol table
+{a=(2,ref(int)), v=(1,int)}
+
+FileTable
+{}
+
+HeapTable
+{1=20, 2=(1,int)}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+writeHeap(v,30) || print(readHeap(readHeap(a))) || 
+
+Symbol table
+{a=(2,ref(int)), v=(1,int)}
+
+FileTable
+{}
+
+HeapTable
+{1=20, 2=(1,int)}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(readHeap(readHeap(a))) || 
+
+Symbol table
+{a=(2,ref(int)), v=(1,int)}
+
+FileTable
+{}
+
+HeapTable
+{1=30, 2=(1,int)}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+print(readHeap(readHeap(a))) || 
+
+Symbol table
+{a=(2,ref(int)), v=(1,int)}
+
+FileTable
+{}
+
+HeapTable
+{1=30, 2=(1,int)}
+
+Output
+[]
+
+================== Next step ==================
+Id: 1
+
+ExeStack
+
+
+Symbol table
+{a=(2,ref(int)), v=(1,int)}
+
+FileTable
+{}
+
+HeapTable
+{1=30, 2=(1,int)}
+
+Output
+[30]
+

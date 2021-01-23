@@ -2,9 +2,9 @@ package GUI;
 
 import Controller.Controller;
 import Model.ADTs.Dictionary.Dictionary;
-import Model.ADTs.HeapTable;
-import Model.ADTs.List;
-import Model.ADTs.MyStack;
+import Model.ADTs.HeapTable.HeapTable;
+import Model.ADTs.List.List;
+import Model.ADTs.Stack.MyStack;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
 import Model.Statements.IStatement;

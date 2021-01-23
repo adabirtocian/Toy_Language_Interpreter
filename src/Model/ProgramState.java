@@ -1,9 +1,9 @@
 package Model;
 
 import Model.ADTs.Dictionary.IDictionary;
-import Model.ADTs.IHeapTable;
-import Model.ADTs.IList;
-import Model.ADTs.IStack;
+import Model.ADTs.HeapTable.IHeapTable;
+import Model.ADTs.List.IList;
+import Model.ADTs.Stack.IStack;
 import Model.Exceptions.MyException;
 import Model.Statements.IStatement;
 import Model.Values.IValue;

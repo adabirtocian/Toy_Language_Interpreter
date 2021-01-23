@@ -1,7 +1,7 @@
 package Model.Statements.Heap;
 
 import Model.ADTs.Dictionary.IDictionary;
-import Model.ADTs.IHeapTable;
+import Model.ADTs.HeapTable.IHeapTable;
 import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;

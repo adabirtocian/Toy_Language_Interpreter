@@ -1,7 +1,7 @@
 import Model.ADTs.Dictionary.Dictionary;
 import Model.ADTs.Dictionary.IDictionary;
-import Model.ADTs.IList;
-import Model.ADTs.List;
+import Model.ADTs.List.IList;
+import Model.ADTs.List.List;
 import Model.Exceptions.EmptyStackException;
 import Model.Exceptions.MyException;
 import Model.Values.BoolValue;

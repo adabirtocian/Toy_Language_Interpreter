@@ -1,4 +1,4 @@
-package Model.ADTs;
+package Model.ADTs.FileTable;
 
 
 import Model.ADTs.Dictionary.Dictionary;

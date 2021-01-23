@@ -1,8 +1,8 @@
 package Model.Statements;
 
 import Model.ADTs.Dictionary.IDictionary;
-import Model.ADTs.IStack;
-import Model.ADTs.MyStack;
+import Model.ADTs.Stack.IStack;
+import Model.ADTs.Stack.MyStack;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
 import Model.Types.IType;

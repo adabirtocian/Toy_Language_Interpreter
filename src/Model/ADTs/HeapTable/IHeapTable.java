@@ -1,4 +1,4 @@
-package Model.ADTs;
+package Model.ADTs.HeapTable;
 
 import Model.ADTs.Dictionary.IDictionary;
 

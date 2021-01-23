@@ -1,9 +1,15 @@
 package Console;
 
 import Controller.Controller;
-import Model.ADTs.*;
 import Model.ADTs.Dictionary.Dictionary;
 import Model.ADTs.Dictionary.IDictionary;
+import Model.ADTs.FileTable.FileTable;
+import Model.ADTs.HeapTable.HeapTable;
+import Model.ADTs.HeapTable.IHeapTable;
+import Model.ADTs.List.IList;
+import Model.ADTs.List.List;
+import Model.ADTs.Stack.IStack;
+import Model.ADTs.Stack.MyStack;
 import Model.Expressions.*;
 import Model.ProgramState;
 import Model.Statements.*;

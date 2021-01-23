@@ -1,7 +1,7 @@
 package Model.Statements;
 
 import Model.ADTs.Dictionary.IDictionary;
-import Model.ADTs.IList;
+import Model.ADTs.List.IList;
 import Model.Exceptions.MyException;
 import Model.Expressions.IExpression;
 import Model.ProgramState;

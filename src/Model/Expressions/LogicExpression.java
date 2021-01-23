@@ -1,7 +1,7 @@
 package Model.Expressions;
 
 import Model.ADTs.Dictionary.IDictionary;
-import Model.ADTs.IHeapTable;
+import Model.ADTs.HeapTable.IHeapTable;
 import Model.Exceptions.InvalidOperatorException;
 import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;

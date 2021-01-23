@@ -1,4 +1,4 @@
-package Model.ADTs;
+package Model.ADTs.Stack;
 
 import Model.Exceptions.MyException;
 

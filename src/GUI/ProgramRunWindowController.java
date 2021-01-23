@@ -1,7 +1,7 @@
 package GUI;
 
 import Controller.Controller;
-import Model.ADTs.IList;
+import Model.ADTs.List.IList;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
 import Model.Statements.IStatement;

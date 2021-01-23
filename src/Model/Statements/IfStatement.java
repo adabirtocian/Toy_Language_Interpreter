@@ -1,7 +1,7 @@
 package Model.Statements;
 
 import Model.ADTs.Dictionary.IDictionary;
-import Model.ADTs.IStack;
+import Model.ADTs.Stack.IStack;
 import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
 import Model.Expressions.IExpression;

@@ -1,13 +1,12 @@
 package Model.Expressions;
 
-import Model.ADTs.IDictionary;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.ADTs.IHeapTable;
 import Model.Exceptions.InvalidOperatorException;
 import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
 import Model.Types.BoolType;
 import Model.Types.IType;
-import Model.Types.IntType;
 import Model.Values.BoolValue;
 import Model.Values.IValue;
 

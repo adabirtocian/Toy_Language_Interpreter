@@ -1,7 +1,7 @@
 package GUI;
 
 import Controller.Controller;
-import Model.ADTs.Dictionary;
+import Model.ADTs.Dictionary.Dictionary;
 import Model.ADTs.HeapTable;
 import Model.ADTs.List;
 import Model.ADTs.MyStack;

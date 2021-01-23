@@ -1,6 +1,6 @@
 package Model.Expressions;
 
-import Model.ADTs.IDictionary;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.ADTs.IHeapTable;
 import Model.Exceptions.MyException;
 import Model.Types.IType;

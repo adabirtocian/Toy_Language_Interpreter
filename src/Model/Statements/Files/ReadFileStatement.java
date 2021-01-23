@@ -1,9 +1,10 @@
-package Model.Statements;
+package Model.Statements.Files;
 
-import Model.ADTs.IDictionary;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
+import Model.Statements.IStatement;
 import Model.Types.IType;
 import Model.Types.IntType;
 import Model.Types.StringType;
@@ -14,7 +15,7 @@ import Model.Values.StringValue;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class ReadFileStatement implements IStatement{
+public class ReadFileStatement implements IStatement {
 
     private final IExpression expression;
     private final String variableName;

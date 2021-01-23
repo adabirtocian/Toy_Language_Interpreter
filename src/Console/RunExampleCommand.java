@@ -1,4 +1,4 @@
-package View;
+package Console;
 
 import Controller.Controller;
 import Model.Exceptions.MyException;

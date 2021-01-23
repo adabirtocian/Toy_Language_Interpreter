@@ -1,7 +1,6 @@
 package Model.Statements;
 
-import Model.ADTs.IDictionary;
-import Model.ADTs.IStack;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;

@@ -1,16 +1,17 @@
-package Model.Statements;
+package Model.Statements.Heap;
 
-import Model.ADTs.IDictionary;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.ADTs.IHeapTable;
 import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
+import Model.Statements.IStatement;
 import Model.Types.IType;
 import Model.Types.ReferenceType;
 import Model.Values.IValue;
 import Model.Values.ReferenceValue;
 
-public class HeapWritingStatement implements IStatement{
+public class HeapWritingStatement implements IStatement {
 
     private String variableName;
     private IExpression expression;

@@ -1,6 +1,6 @@
 package Model;
 
-import Model.ADTs.IDictionary;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.ADTs.IHeapTable;
 import Model.ADTs.IList;
 import Model.ADTs.IStack;

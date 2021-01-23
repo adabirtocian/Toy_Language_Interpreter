@@ -1,9 +1,10 @@
-package Model.Statements;
+package Model.Statements.Files;
 
-import Model.ADTs.IDictionary;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
+import Model.Statements.IStatement;
 import Model.Types.IType;
 import Model.Types.StringType;
 import Model.Values.IValue;
@@ -12,7 +13,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class OpenRFileStatement  implements IStatement{
+public class OpenRFileStatement  implements IStatement {
 
     private final IExpression expression;
 

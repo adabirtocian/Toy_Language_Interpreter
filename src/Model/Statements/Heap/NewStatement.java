@@ -1,17 +1,18 @@
-package Model.Statements;
+package Model.Statements.Heap;
 
-import Model.ADTs.IDictionary;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.Exceptions.InvalidTypeException;
 import Model.Exceptions.MyException;
 import Model.Exceptions.UndeclaredVariableException;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
+import Model.Statements.IStatement;
 import Model.Types.IType;
 import Model.Types.ReferenceType;
 import Model.Values.IValue;
 import Model.Values.ReferenceValue;
 
-public class NewStatement implements IStatement{
+public class NewStatement implements IStatement {
 
     private String variableName;
     private IExpression expression;

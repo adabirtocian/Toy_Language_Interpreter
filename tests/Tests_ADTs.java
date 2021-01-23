@@ -1,5 +1,5 @@
-import Model.ADTs.Dictionary;
-import Model.ADTs.IDictionary;
+import Model.ADTs.Dictionary.Dictionary;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.ADTs.IList;
 import Model.ADTs.List;
 import Model.Exceptions.EmptyStackException;
@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class Tests_ADTs {
     @Test
     void testDict(){
-        IDictionary<String, IValue> symbolTable = new Dictionary<String, IValue>();
+        IDictionary<String, IValue> symbolTable = new Dictionary<>();
         IValue value = new IntValue(4);
         IValue value1 = new IntValue(24);
         symbolTable.add("v", value);
@@ -25,10 +25,10 @@ public class Tests_ADTs {
 
     @Test
     void testList(){
-        IList<IValue> out = new List<IValue>();
+        IList<IValue> out = new List<>();
         IValue value = new BoolValue(true);
         out.add(value);
 
-        assertEquals(true, ((BoolValue)out.pop()).getValue());
+        assertTrue(((BoolValue) out.pop()).getValue());
     }
 }

@@ -1,10 +1,18 @@
-package View;
+package Console;
 
 import Controller.Controller;
 import Model.ADTs.*;
+import Model.ADTs.Dictionary.Dictionary;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.Expressions.*;
 import Model.ProgramState;
 import Model.Statements.*;
+import Model.Statements.Files.CloseRFileStatement;
+import Model.Statements.Files.OpenRFileStatement;
+import Model.Statements.Files.ReadFileStatement;
+import Model.Statements.Heap.HeapWritingStatement;
+import Model.Statements.Heap.NewStatement;
+import Model.Statements.Loops.WhileStatement;
 import Model.Types.IntType;
 import Model.Types.ReferenceType;
 import Model.Types.StringType;

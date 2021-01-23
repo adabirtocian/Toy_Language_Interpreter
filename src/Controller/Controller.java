@@ -1,6 +1,7 @@
 package Controller;
 
-import Model.ADTs.IDictionary;
+import Model.ADTs.Dictionary.Dictionary;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.Exceptions.EmptyListException;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
@@ -91,7 +92,7 @@ public class Controller {
     private Map<Integer, IValue> garbageCollector(List<Integer> symbolTabelAddresses, List<Integer> heapTableAddresses, Map<Integer, IValue> heapTable) {
         return heapTable.entrySet().stream()
                 .filter(entry -> symbolTabelAddresses.contains(entry.getKey()) || heapTableAddresses.contains(entry.getKey()))
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+                .collect(Collectors.toConcurrentMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
     private List<Integer> getAllSymbolTabelAddresses(List<Collection<IValue>> symbolTabelsList) {
@@ -112,7 +113,7 @@ public class Controller {
 
     public void typeCheck() throws  MyException {
         for(ProgramState state: this.repository.getProgramStateList()) {
-            IDictionary<String, IType> typeEnvironment = new Model.ADTs.Dictionary<>();
+            IDictionary<String, IType> typeEnvironment = new Dictionary<>();
             state.getExeStack().peek().typeCheck(typeEnvironment);
         }
     }

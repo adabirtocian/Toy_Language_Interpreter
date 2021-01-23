@@ -1,4 +1,4 @@
-package Model.ADTs;
+package Model.ADTs.Dictionary;
 
 import Model.Exceptions.MyException;
 

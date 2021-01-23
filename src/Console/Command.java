@@ -1,4 +1,4 @@
-package View;
+package Console;
 
 public abstract class Command {
 

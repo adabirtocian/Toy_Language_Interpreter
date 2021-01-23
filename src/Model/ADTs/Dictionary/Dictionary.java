@@ -1,15 +1,16 @@
-package Model.ADTs;
+package Model.ADTs.Dictionary;
 import Model.Exceptions.InvalidKeyException;
 import Model.Exceptions.MyException;
-import java.util.HashMap;
+
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
 
-    protected HashMap<T1,T2> dictionary;
+    protected ConcurrentHashMap<T1,T2> dictionary;
 
     public Dictionary() {
-        this.dictionary = new HashMap<>();
+        this.dictionary = new ConcurrentHashMap<>();
     }
 
     @Override
@@ -56,7 +57,7 @@ public class Dictionary<T1,T2> implements IDictionary<T1,T2>{
 
     @Override
     public void setContent(Map<T1, T2> newContent) {
-        this.dictionary = (HashMap<T1, T2>) newContent;
+        this.dictionary = (ConcurrentHashMap<T1, T2>) newContent;
     }
 
     @Override

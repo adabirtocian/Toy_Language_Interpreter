@@ -1,10 +1,10 @@
-package Model.Statements;
+package Model.Statements.Files;
 
-import Model.ADTs.IDictionary;
-import Model.ADTs.IStack;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.Exceptions.*;
 import Model.Expressions.IExpression;
 import Model.ProgramState;
+import Model.Statements.IStatement;
 import Model.Types.IType;
 import Model.Types.StringType;
 import Model.Values.IValue;

@@ -1,6 +1,6 @@
 package Model.Statements;
 
-import Model.ADTs.IDictionary;
+import Model.ADTs.Dictionary.IDictionary;
 import Model.Exceptions.InvalidKeyException;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
